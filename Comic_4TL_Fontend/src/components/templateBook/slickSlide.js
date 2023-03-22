@@ -1,7 +1,13 @@
 import React from "react";
 import Helper from "../homeComponent/helper/helper";
+import HomeServices from "../../services/HomeServices";
 
 const SlideSlick = (props) => {
+
+    let homeServices = new HomeServices();
+    homeServices.getAll().then((res) => {
+        console.log(res.data);
+    })
 
     let helper = new Helper();
     
