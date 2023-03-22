@@ -2,6 +2,8 @@ package com.comic_4tl.backend_comic_4tl.model;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,5 +30,13 @@ public class Feedback {
     private String comment;
     @Column(name = "create_at", nullable = false)
     private Date create_at;
+
+    @ManyToOne()
+    @JsonBackReference()
+    private Manga manga;
+
+    @ManyToOne()
+    @JsonBackReference()
+    private User user;
 
 }

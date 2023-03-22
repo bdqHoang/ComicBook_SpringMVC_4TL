@@ -4,7 +4,9 @@ import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,6 +16,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -47,11 +50,15 @@ public class Manga {
     private Set<Genre> genres = new HashSet<>();
 
     @ManyToOne()
-    @JoinColumn(name = "author_id", referencedColumnName = "author_id", insertable = false, updatable = false)
+    @JsonBackReference
     private Author author;
 
     @ManyToOne()
-    @JoinColumn(name = "translator_id", referencedColumnName = "translator_id", insertable = false, updatable = false)
+    @JsonBackReference
     private Translator translator;
+
+    @OneToMany(mappedBy = "manga")
+    @JsonManagedReference
+    private Set<Chapters> chapters = new HashSet<>();
 
 }

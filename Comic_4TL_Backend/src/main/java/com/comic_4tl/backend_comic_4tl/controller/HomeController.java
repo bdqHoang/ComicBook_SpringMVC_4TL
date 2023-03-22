@@ -1,21 +1,38 @@
 package com.comic_4tl.backend_comic_4tl.controller;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.comic_4tl.backend_comic_4tl.model.User;
-import com.comic_4tl.backend_comic_4tl.services.UserServices;
+import com.comic_4tl.backend_comic_4tl.model.Manga;
+import com.comic_4tl.backend_comic_4tl.services.HomeServices;
 
 @RestController
 public class HomeController {
     @Autowired
-    private UserServices userServices;
+    private HomeServices homeServices;
 
-    @GetMapping("/home")
-    public User home() {
+    @GetMapping("/season")
+    public List<Manga> getNewSeason() {
 
-        return userServices.findByUsername("bdqhoang");
+        return homeServices.getNewSeason();
+    }
+
+    @GetMapping("/getmanga")
+    public Optional<Manga> getMangaById(Integer id) {
+        id = 1;
+        Optional<Manga> manga = homeServices.getMangaById(id);
+        System.out.println(manga.get().getAuthor_id());
+        return homeServices.getMangaById(id);
+    }
+
+    @GetMapping("/getmangaid")
+    public Manga getManga(Integer id) {
+        id = 1;
+        return homeServices.getMangaId(id);
     }
 
     // @Autowired

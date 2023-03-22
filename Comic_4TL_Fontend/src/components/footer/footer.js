@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function Footer() {
+const Footer = () => {
     return (
-        <div>
+        <>
             <footer id="footer" className="footer bg-overlay"><div className="footer-main">
                 <div className="container"> <div className="row"> <div
                     className="footer_img"> <img className=""
@@ -85,9 +85,12 @@ export default function Footer() {
                             </div> </div></div>
             </footer>
 
-        </div>
+        </>
 
 
     )
 
 }
+
+
+export default Footer;

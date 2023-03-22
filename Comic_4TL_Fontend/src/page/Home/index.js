@@ -1,155 +1,12 @@
 import React from "react";
-
-export default function Index() {
+import NewSeason from "../../components/homeComponent/newSeason";
+function Index() {
+    const myStyle = { 
+        background: 'url(https://yae.hifive03.com/assets/img/manga_banner/log.jpg) fixed no-repeat center/cover'
+      };
     return (
-        <div >
-            <section className="trending-area fix">
-                <div className="container">
-                    <div className="trending-main">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="acme-news-ticker">
-                                    <div className="acme-news-ticker-label">Update News</div>
-                                    <div className="acme-news-ticker-box">
-                                        <ul className="my-news-ticker">
-                                            <li><a href="!#"><span>Latest
-                                                News:</span> Episode 12 of
-                                                Spy x Family is scheduled to
-                                                release worldwide on Saturday,
-                                                June 25th, 2022. The episode
-                                                will be available to stream on
-                                                Crunchyroll and Netflix at 8:30
-                                                AM PDT (Pacific Timing);
-                                                however, the release time will
-                                                vary depending on your region.</a></li>
-                                            <li><a href="!#"><span>Latest News:</span>
-                                                Overlord Season 5 has yet to get
-                                                confirmed in 2022. There is no
-                                                release date for the fifth
-                                                season of this anime series.</a></li>
-                                            <li><a href="!#"><span>Latest News:</span>
-                                                The latest episode is packed
-                                                with new information regarding
-                                                the Demon Realm. However, more
-                                                mysteries unfold as well. Who
-                                                exactly is Amane? Here are all
-                                                the details needed for The Devil
-                                                is a Part-Timer Season 2 Episode
-                                                7.</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-lg-8">
-                                <div className="trending-top mb-30">
-                                    <div className="trend-top-img"> <img
-                                        src="https://yae.hifive03.com/assets/img/manga_banner/banner1.jpg" alt="" />
-                                        <div className="trend-top-cap">
-                                            <span>Fantasy</span>
-                                            <h2><a href="manga_single_page.html">Twilight
-                                                Poem</a></h2>
-                                            <p>Kim Suji ,
-                                                MIDNIGHT STUDIO</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="trending-bottom">
-                                    <div className="row">
-                                        <div className="col-lg-12">
-                                            <div className="section-tittle mb-30">
-                                                <h3>NEW
-                                                    SEASON</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="row trending-bottom-slider">
-                                        <div className="col-lg-4"> <a href="manga_single_page.html">
-                                            <div className="single-bottom mb-35">
-                                                <div className="trend-bottom-img
-                                                    mb-30"> <img className="play"
-                                                        src="https://yae.hifive03.com/assets/img/manga/1.jpg"
-                                                        alt="" />
-                                                    <div className="overlay_play"> <i className="fa-solid
-                                                            fa-heart"> 35M</i>
-                                                    </div>
-                                                </div>
-                                                <div className="trend-bottom-cap">
-                                                    <h4>I Really Don’t Want to
-                                                        Be the First </h4>
-                                                    <ul className="d-flex flex-wrap
-                                                        star">
-                                                        <li><i className="fa-solid
-                                                                fa-star"></i></li>
-                                                        <li><i className="fa-solid
-                                                                fa-star"></i></li>
-                                                        <li><i className="fa-solid
-                                                                fa-star"></i></li>
-                                                        <li><i className="fa-solid
-                                                                fa-star-half-stroke"></i></li>
-                                                        <li><i className="fa-regular
-                                                                fa-star"></i></li>
-                                                    </ul>
-                                                    <div className="tag2
-                                                        d-flex flex-wrap">
-                                                        <h6>Genre:</h6>
-                                                        <ul className="d-flex
-                                                            flex-wrap">
-                                                            <li>Action,</li>
-                                                            <li>Comedy,</li>
-                                                            <li>Drama,</li>
-                                                            <li>Supernatural</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <div className="section-tittle
-                                mb-30">
-                                    <h3>RECENT RELEASE</h3>
-                                </div> <a href="manga_single_page.html">
-                                    <div className="trand-right-single d-flex">
-                                        <div className="trand-right-img"> <img className="play"
-                                            src="https://yae.hifive03.com/assets/img/manga/small1.jpg" alt="" />
-                                            <div className="overlay_play2">
-                                                <i className="fa-solid fa-heart"> 61M</i>
-                                            </div>
-                                        </div>
-                                        <div className="trand-right-cap">
-                                            <h4>Become
-                                                Villain In The Game Cultivation -
-                                            </h4>
-                                            <ul className="d-flex flex-wrap star">
-                                                <li><i className="fa-solid fa-star"></i></li>
-                                                <li><i className="fa-solid fa-star"></i></li>
-                                                <li><i className="fa-solid fa-star"></i></li>
-                                                <li><i className="fa-solid
-                                                    fa-star-half-stroke"></i></li>
-                                                <li><i className="fa-regular fa-star"></i></li>
-                                            </ul>
-                                            <div className="tag2 d-flex
-                                            flex-wrap">
-                                                <h6>Genre:</h6>
-                                                <ul className="d-flex flex-wrap">
-                                                    <li>Action,</li>
-                                                    <li>Comedy,</li>
-                                                    <li>Drama,</li>
-                                                    <li>Supernatural</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        < >
+            <NewSeason />
 
             <section id="manga" className="manga_filter pt-50 pb-20">
                 <div className="container">
@@ -1452,56 +1309,73 @@ export default function Index() {
             </section>
 
             <div className="wrap-modal1 js-modal1 p-t-60 p-b-20">
-                <div className="overlay-modal1 js-hide-modal1"></div>
-                <div className="container">
-                    <div className="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-                        <button className="how-pos3 hov3 trans-04 js-hide-modal1"> <i className="fa-solid fa-xmark"></i>
-                        </button>
-                        <div className="row">
-                            <div className="col-lg-6 m-auto">
-                                <form id="form" noValidate action="!#" method="post">
-                                    <div className="tit_form">
-                                        <h3>Join Yae Manga House
-                                            Now</h3>
-                                    </div>
-                                    <div className="mb-3">
-                                        <label htmlFor="email" className="form-label">Email
-                                            address</label> <input type="email" data-validation="email" data-content="Email has a invalid
-                                        format" className="form-control" name="email" id="email" />
-                                        <div className="form_text">We'll never share your
-                                            email with anyone else.</div>
-                                    </div>
-                                    <div className="mb-3"> <label htmlFor="exampleInputPassword1"
+            <div className="overlay-modal1 js-hide-modal1" style={myStyle}></div>
+            <div className="container">
+                <div className="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+                    <button className="how-pos3 hov3 trans-04 js-hide-modal1">
+                        <i className="fa-solid fa-xmark"></i>
+                    </button>
+                    <div className="row">
+                        <div className="col-lg-6 m-auto">
+                            <form id="form" noValidate action="#" method="post">
+                                <div className="tit_form">
+                                    <h3>Join Yae Manga House Now</h3>
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="email" className="form-label">Email
+                                        address</label>
+                                    <input type="email" data-validation="email"
+                                        data-content="Email has a invalid
+                                        format" className="form-control"
+                                        name="email" id="email"/>
+                                    <div className="form_text">We'll never share
+                                        your email with anyone else.</div>
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="exampleInputPassword1"
                                         className="form-label">Password</label>
-                                        <input type="password" className="form-control" id="exampleInputPassword1" /> </div>
-                                    <div className="mb-3 form-check"> <input type="checkbox" className="form-check-input"
-                                        id="exampleCheck1" /> <label className="form-check-label"
-                                            htmlFor="exampleCheck1">Check me out</label>
-                                    </div> <button type="submit" className="modal_btn
+                                    <input type="password" className="form-control"
+                                        id="exampleInputPassword1"/>
+                                </div>
+                                <div className="mb-3 form-check">
+                                    <input type="checkbox"
+                                        className="form-check-input"
+                                        id="exampleCheck1"/>
+                                    <label className="form-check-label"
+                                        htmlFor="exampleCheck1">Check me out</label>
+                                </div>
+                                <button type="submit" className="modal_btn
                                     text-center">Submit</button>
-                                    <div className="form_icons">
-                                        <div className="icon_tit">Sign
-                                            in with social account</div>
-                                        <ul className="d-flex flex-wrap text-center
+                                <div className="form_icons">
+                                    <div className="icon_tit">Sign in with social
+                                        account</div>
+                                    <ul className="d-flex flex-wrap text-center
                                         justify-content-center ">
-                                            <li className="goo"><a href="!#"><i className="fa-brands fa-google"></i></a></li>
-                                            <li className="fac"><a href="!#"><i className="fa-brands
+                                        <li className="goo"><a href="#"><i
+                                                    className="fa-brands fa-google"></i></a></li>
+                                        <li className="fac"><a href="#"><i
+                                                    className="fa-brands
                                                     fa-facebook-f"></i></a></li>
-                                            <li className="twi"><a href="!#"><i className="fa-brands
+                                        <li className="twi"><a href="#"><i
+                                                    className="fa-brands
                                                     fa-twitter"></i></a></li>
-                                            <li className="ins"><a href="!#"><i className="fa-brands
+                                        <li className="ins"><a href="#"><i
+                                                    className="fa-brands
                                                     fa-instagram"></i></a></li>
-                                            <li className="pat"><a href="!#"><i className="fa-brands
+                                        <li className="pat"><a href="#"><i
+                                                    className="fa-brands
                                                     fa-patreon"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </form>
-                            </div>
+                                    </ul>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </>
 
     )
 }
+
+export default Index;

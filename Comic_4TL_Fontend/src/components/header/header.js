@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Header() {
     return (
-        <div>
+        <>
             <div className="wrap"><canvas id="sakura"></canvas>
             </div>
             <div id="preloader-active"><div className="preloader d-flex
@@ -117,7 +117,7 @@ export default function Header() {
                                 d-md-none"></div> </div> </div> </div></div>
             </header>
 
-        </div>
+        </>
 
     );
 }

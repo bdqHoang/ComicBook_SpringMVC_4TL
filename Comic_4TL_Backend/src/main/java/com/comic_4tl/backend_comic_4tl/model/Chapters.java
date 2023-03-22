@@ -2,6 +2,8 @@ package com.comic_4tl.backend_comic_4tl.model;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,7 +33,7 @@ public class Chapters {
     private boolean enable;
 
     @ManyToOne()
-    @JoinColumn(name = "manga_id", referencedColumnName = "manga_id", insertable = false, updatable = false)
+    @JsonBackReference
     private Manga manga;
 
 }
