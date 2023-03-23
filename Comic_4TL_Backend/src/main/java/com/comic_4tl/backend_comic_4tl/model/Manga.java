@@ -52,11 +52,13 @@ public class Manga {
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "author_id")
+    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     @JsonBackReference
     private Author author;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "translator_id")
+    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     @JsonBackReference
     private Translator translator;
 
