@@ -9,5 +9,6 @@ public interface MangaRespository extends JpaRepository<Manga, Integer> {
     Manga findByName(String name);
 
     @Query(value = "SELECT * FROM manga WHERE manga_id = ?1", nativeQuery = true)
-    Manga getMangaById(int manga_id);
+    Manga getMangaById(Integer manga_id);
+
 }
