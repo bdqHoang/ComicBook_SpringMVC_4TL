@@ -19,8 +19,8 @@ public class User {
     private String email;
     @Column(name = "password", nullable = false)
     private String password;
-    @Column(name = "avata", nullable = false)
-    private String avata;
+    @Column(name = "avatar", nullable = false)
+    private String avatar;
     @Column(name = "role", nullable = false)
     private String role;
     @Column(name = "enable", nullable = false)
@@ -29,12 +29,12 @@ public class User {
     public User() {
     }
 
-    public User(int user_id, String name, String email, String password, String avata, String role, boolean enable) {
+    public User(int user_id, String name, String email, String password, String avatar, String role, boolean enable) {
         this.user_id = user_id;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.avata = avata;
+        this.avatar = avatar;
         this.role = role;
         this.enable = enable;
     }
@@ -71,12 +71,12 @@ public class User {
         this.password = password;
     }
 
-    public String getAvata() {
-        return avata;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setAvata(String avata) {
-        this.avata = avata;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public String getRole() {
