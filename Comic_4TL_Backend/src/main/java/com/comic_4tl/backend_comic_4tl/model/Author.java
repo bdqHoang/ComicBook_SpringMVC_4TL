@@ -3,6 +3,8 @@ package com.comic_4tl.backend_comic_4tl.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,7 +26,8 @@ public class Author {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(targetEntity = Manga.class, mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "author", fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Manga> mangas = new ArrayList<>();
 
 }

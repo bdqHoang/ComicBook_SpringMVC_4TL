@@ -1,43 +1,33 @@
 package com.comic_4tl.backend_comic_4tl.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name = "ratting")
 public class Ratting {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ratting_id;
-    @Column(name = "ratting")
+    @Column(name = "number_of_ratting")
     private int ratting;
 
-    public Ratting() {
-    }
+    @ManyToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @JoinColumn(name = "manga_id")
+    private Manga manga;
 
-    public Ratting(int ratting_id, int ratting) {
-        this.ratting_id = ratting_id;
-        this.ratting = ratting;
-    }
-
-    public int getRatting_id() {
-        return ratting_id;
-    }
-
-    public void setRatting_id(int ratting_id) {
-        this.ratting_id = ratting_id;
-    }
-
-    public int getRatting() {
-        return ratting;
-    }
-
-    public void setRatting(int ratting) {
-        this.ratting = ratting;
-    }
+    @ManyToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User users;
 
 }

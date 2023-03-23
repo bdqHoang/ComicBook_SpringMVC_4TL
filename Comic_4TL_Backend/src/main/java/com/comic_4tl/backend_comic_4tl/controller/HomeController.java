@@ -1,21 +1,37 @@
 package com.comic_4tl.backend_comic_4tl.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.comic_4tl.backend_comic_4tl.model.User;
-import com.comic_4tl.backend_comic_4tl.services.UserServices;
+import com.comic_4tl.backend_comic_4tl.model.Manga;
+import com.comic_4tl.backend_comic_4tl.services.HomeServices;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class HomeController {
     @Autowired
-    private UserServices userServices;
+    private HomeServices homeServices;
 
-    @GetMapping("/home")
-    public User home() {
+    @GetMapping("/season")
+    public List<Manga> getNewSeason() {
+        try {
+            var season = homeServices.getNewSeason();
+            return season;
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
 
-        return userServices.findByUsername("bdqhoang");
+    }
+
+    @GetMapping("/getmangaid")
+    public Manga getManga(Integer id) {
+        id = 1;
+        return homeServices.getMangaId(id);
     }
 
     // @Autowired
