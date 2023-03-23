@@ -2,6 +2,14 @@ import React from "react"
 class Helper{
     ratting(params) {
         let ratting =[];
+        if(params === undefined){
+            for(var i=0 ; i < 5 ; i++){
+                ratting.push(<i className="fa-regular fa-star"></i>)
+            }
+
+            return ratting; 
+        }
+        
         if(params.ratting == undefined){
             for(var i=0 ; i < 5 ; i++){
                 ratting.push(<i className="fa-regular fa-star"></i>)
@@ -27,6 +35,9 @@ class Helper{
     }
 
     genre(params) {
+        if (params === undefined) {
+            return <li>None</li>
+        }
         if(params.genre == undefined){
             return <li>None</li>
         }

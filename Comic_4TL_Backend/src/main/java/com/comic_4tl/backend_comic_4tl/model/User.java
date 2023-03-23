@@ -3,10 +3,12 @@ package com.comic_4tl.backend_comic_4tl.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -34,12 +36,12 @@ public class User {
     @Column(name = "enable", nullable = false)
     private boolean enable;
 
-    @OneToMany
-    @JsonManagedReference
-    private List<Feedback> feedbacks = new ArrayList<>();
+    @OneToMany(mappedBy = "users", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Feedback> feedback = new ArrayList<>();
 
-    @OneToMany
-    @JsonManagedReference
+    @OneToMany(mappedBy = "users", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Ratting> rattings = new ArrayList<>();
 
 }
