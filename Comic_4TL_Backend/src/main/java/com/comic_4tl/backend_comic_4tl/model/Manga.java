@@ -4,12 +4,12 @@ import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -27,10 +27,6 @@ public class Manga {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int manga_id;
-    @Column(name = "author_id", nullable = false)
-    private int author_id;
-    @Column(name = "translator_id", nullable = false)
-    private int translator_id;
     @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "avatar")
@@ -46,19 +42,22 @@ public class Manga {
     @Column(name = "status", nullable = false)
     private boolean enable;
 
-    @ManyToMany(mappedBy = "manga")
+
+
+
+    @ManyToMany(mappedBy = "manga", fetch = FetchType.LAZY)
     private Set<Genre> genres = new HashSet<>();
 
-    @ManyToOne()
-    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @JoinColumn(name = "author_id")
     private Author author;
 
-    @ManyToOne()
-    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @JoinColumn(name = "translator_id")
     private Translator translator;
 
-    @OneToMany(mappedBy = "manga")
-    @JsonManagedReference
+    @OneToMany(mappedBy = "manga", fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<Chapters> chapters = new HashSet<>();
 
 }

@@ -3,7 +3,7 @@ package com.comic_4tl.backend_comic_4tl.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -26,8 +26,8 @@ public class Author {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "author")
-    @JsonManagedReference
+    @OneToMany(mappedBy = "author", fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Manga> mangas = new ArrayList<>();
 
 }
