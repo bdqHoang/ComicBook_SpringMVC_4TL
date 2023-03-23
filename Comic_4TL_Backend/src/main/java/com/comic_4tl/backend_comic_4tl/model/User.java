@@ -44,7 +44,7 @@ public class User {
     private List<Feedback> feedback = new ArrayList<>();
 
     @OneToMany(mappedBy = "users", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) \
+    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     @JsonManagedReference
     private List<Ratting> rattings = new ArrayList<>();
 
