@@ -11,7 +11,6 @@ import com.comic_4tl.backend_comic_4tl.model.Feedback;
 import com.comic_4tl.backend_comic_4tl.services.FeedbackServices;
 
 @RestController
-@RequestMapping("/feedback")
 public class FeedbackController {
     @Autowired
     private FeedbackServices feedbackServices;
@@ -34,5 +33,10 @@ public class FeedbackController {
     @GetMapping(value = "/getfeedback-repplyid")
     public List<Feedback> getAllFeedbackByRepplyId(int id) {
         return feedbackServices.getFeedbackByRepplyId(id);
+    }
+
+    @GetMapping(value = "/countfeedback")
+    public int countFeedback(int id) {
+        return feedbackServices.countFeedback(id);
     }
 }

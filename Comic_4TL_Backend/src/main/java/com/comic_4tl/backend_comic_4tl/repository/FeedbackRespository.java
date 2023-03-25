@@ -22,4 +22,7 @@ public interface FeedbackRespository extends JpaRepository<Feedback, Integer> {
     @Query(value = "select * from feedback where repply_id = ?1", nativeQuery = true)
     public List<Feedback> findByRepply_id(int repply_id);
 
+    //count feedback
+    @Query(value = "select count(*) from feedback where manga_id = ?1", nativeQuery = true)
+    public int countFeedback(int manga_id);
 }

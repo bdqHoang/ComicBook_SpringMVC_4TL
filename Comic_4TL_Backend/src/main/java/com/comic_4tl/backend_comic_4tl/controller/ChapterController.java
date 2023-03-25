@@ -13,15 +13,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-@RequestMapping("/chapter")
 public class ChapterController {
 
     @Autowired
     private ChapterServices chapterServices;
 
-    @GetMapping(value = "/allchapter")
-    public List<Chapters> getAllChapter() {
-        return chapterServices.getAllChapter();
+    @GetMapping("/getChapters-MangaId")
+    public List<Chapters> getChaptersByMangaId(int id) {
+        return chapterServices.getChaptersByMangaId(id);
     }
 
 }

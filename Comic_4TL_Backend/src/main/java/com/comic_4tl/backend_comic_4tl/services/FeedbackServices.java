@@ -28,5 +28,9 @@ public class FeedbackServices {
     public List<Feedback> getFeedbackByRepplyId(int id) {
         return feedbackRespository.findByRepply_id(id);
     }
+
+    public int countFeedback(int id) {
+        return feedbackRespository.countFeedback(id);
+    }
     
 }
