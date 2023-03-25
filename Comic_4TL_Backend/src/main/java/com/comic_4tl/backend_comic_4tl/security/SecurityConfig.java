@@ -16,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+
 @EnableWebSecurity
 @Configuration
 @EnableGlobalMethodSecurity(
@@ -59,8 +60,8 @@ public class SecurityConfig {
         http.cors().and().csrf().disable()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .authorizeRequests().requestMatchers("/api/protected").authenticated()
-                .anyRequest().permitAll();
+                .authorizeRequests().requestMatchers("/api/login", "/api/register").permitAll()
+                .anyRequest().authenticated();
 
         http.authenticationProvider(authenticationProvider());
 

@@ -31,12 +31,12 @@ public class User {
     private String email;
     @Column(name = "password", nullable = false)
     private String password;
-    @Column(name = "avatar", nullable = false)
+    @Column(name = "avatar", nullable = true)
     private String avatar;
     @Column(name = "role", nullable = false)
-    private String role;
+    private Role role = Role.ROLE_USER;
     @Column(name = "enable", nullable = false)
-    private boolean enable;
+    private boolean enable = true;
 
     @OneToMany(mappedBy = "users", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })

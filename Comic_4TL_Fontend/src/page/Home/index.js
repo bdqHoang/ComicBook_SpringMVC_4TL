@@ -3,10 +3,12 @@ import NewSeason from "../../components/homeComponent/newSeason";
 function Index() {
     const myStyle = { 
         background: 'url(https://yae.hifive03.com/assets/img/manga_banner/log.jpg) fixed no-repeat center/cover'
-      };
+    };
+
     return (
         < >
             <NewSeason />
+            "asdasd" a'asdasd'
 
             <section id="manga" className="manga_filter pt-50 pb-20">
                 <div className="container">
