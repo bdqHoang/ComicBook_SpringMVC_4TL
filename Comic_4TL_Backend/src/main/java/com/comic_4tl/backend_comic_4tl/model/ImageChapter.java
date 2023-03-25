@@ -1,5 +1,10 @@
 package com.comic_4tl.backend_comic_4tl.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,8 +29,9 @@ public class ImageChapter {
     @Column(name = "number", nullable = false)
     private int number;
 
-    @ManyToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "chapter_id")
+    @JsonBackReference
     private Chapters chapter;
 
 }

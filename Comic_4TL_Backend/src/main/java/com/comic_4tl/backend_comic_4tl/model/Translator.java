@@ -1,8 +1,11 @@
 package com.comic_4tl.backend_comic_4tl.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -25,7 +28,8 @@ public class Translator {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "translator", fetch = FetchType.LAZY , cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Manga> mangas;
+    @OneToMany(mappedBy = "translator", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+    @JsonManagedReference
+    private List<Manga> mangas = new ArrayList<>();
 }
