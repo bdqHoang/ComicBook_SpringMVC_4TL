@@ -2,12 +2,9 @@ package com.comic_4tl.backend_comic_4tl.model;
 
 import java.sql.Date;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -19,7 +16,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -31,7 +27,7 @@ import lombok.Data;
 public class Manga {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int manga_id;
+    private int mangaId;
     @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "avatar")
@@ -43,12 +39,13 @@ public class Manga {
     @Column(name = "views")
     private int views;
     @Column(name = "release_day", nullable = false)
-    private Date release_day;
+    private Date releaseDay;
     @Column(name = "status", nullable = false)
     private boolean enable;
 
-    @ManyToMany(mappedBy = "manga", fetch = FetchType.LAZY)
-    private Set<Genre> genres = new HashSet<>();
+    @OneToMany(mappedBy = "manga", fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<GenreDetail> listGenre = new ArrayList();
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "author_id")

@@ -17,11 +17,13 @@ public class HomeController {
     @Autowired
     private HomeServices homeServices;
 
-    @GetMapping("/season")
+    @GetMapping("/new-season")
     public List<Manga> getNewSeason() {
 
         return homeServices.getNewSeason();
     }
+
+    
 
     // @Autowired
     // private DataSource dataSource;

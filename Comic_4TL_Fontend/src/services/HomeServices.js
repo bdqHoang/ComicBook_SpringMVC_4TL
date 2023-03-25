@@ -1,11 +1,17 @@
-import React from "react";
 import api from "./api";
 class HomeServices{
 
-    
-    getAll(){
-        return api.get("/season");
+    // Get all comics new season
+    getNewSeason(){
+        return api.get("/new-season");
     }
+
+
+    // Get all comics recent release
+    getRecentRelease(){
+        return api.get("/recent");
+    }
+
 
 }
 
