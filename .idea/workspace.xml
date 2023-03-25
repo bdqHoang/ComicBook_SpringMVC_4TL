@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ab8188f-be8b-4761-90ba-99b7ee1d099d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/controller/ChapterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/services/ChapterServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/repository/ChaptersRespository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/repository/ChaptersRespository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/repository/FeedbackRespository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/repository/FeedbackRespository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/repository/MangaRespository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/repository/MangaRespository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/controller/ChapterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/controller/ChapterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/repository/ImageChapterRespository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/repository/ImageChapterRespository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/services/ChapterServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/services/ChapterServices.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +70,7 @@
       <workItem from="1679502660999" duration="938000" />
       <workItem from="1679505345190" duration="35000" />
       <workItem from="1679538552413" duration="53000" />
+      <workItem from="1679571954592" duration="44000" />
     </task>
     <servers />
   </component>

@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 @RestController
 @RequestMapping("/chapter")
 public class ChapterController {
@@ -20,16 +19,9 @@ public class ChapterController {
     @Autowired
     private ChapterServices chapterServices;
 
-    @GetMapping(value="/allchapter")
+    @GetMapping(value = "/allchapter")
     public List<Chapters> getAllChapter() {
         return chapterServices.getAllChapter();
     }
 
-    @GetMapping(value = "/getchapter-mangaid")
-    public List<Chapters> getAllChapterByMangaId(int id){
-        return chapterServices.getChapterByMangaId(id);
-    }
-    
-
-    
 }

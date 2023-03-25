@@ -17,8 +17,6 @@ public class ChapterServices {
         return chaptersRespository.findAll();
     }
 
-    public List<Chapters> getChapterByMangaId(int id) {
-        return chaptersRespository.findByMangaId(id);
-    }
+    
 
 }

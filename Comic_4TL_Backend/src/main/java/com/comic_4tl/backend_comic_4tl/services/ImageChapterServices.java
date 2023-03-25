@@ -13,8 +13,13 @@ public class ImageChapterServices {
     @Autowired
     private ImageChapterRespository imageChapterRespository;
 
-    public List<ImageChapter> getImageChapterByChapters(int id) {
-        return imageChapterRespository.findByChapter_id(id);
+    //get image chapter by chapter id
+    public List<ImageChapter> getImageByChapterID(int chapterId) {
+        return imageChapterRespository.getChaptersByMangaId(chapterId);
     }
 
+    // find image chapter by chapter id and manga id in manga table
+    public List<ImageChapter> getImageChapterByMangaIdAndChapterId(int mangaId, int chapterId) {
+        return imageChapterRespository.getImageChapterByMangaIdAndChapterId(mangaId, chapterId);
+    }
 }

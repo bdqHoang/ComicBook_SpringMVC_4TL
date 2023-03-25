@@ -14,9 +14,21 @@ public class ImageChapterController {
     @Autowired
     private ImageChapterServices imageChapterServices;
 
-    //find image chapter by chapter id
+    // find image chapter by chapter id
     @GetMapping(value = "/getimagechapter-chapterid")
-    public List<ImageChapter> getImageChapterByChapters(int id) {
-        return imageChapterServices.getImageChapterByChapters(id);
+    public List<ImageChapter> getImageChapterByChapterId(int chapterId) {
+        return imageChapterServices.getImageByChapterID(chapterId);
+    }
+
+    // find image chapter by chapter id and manga id in manga table
+    @GetMapping(value = "/getimagechapter-mangaid-chapterid")
+    public List<ImageChapter> getImageChapterByMangaIdAndChapterId(int mangaId, int chapterId) {
+        return imageChapterServices.getImageChapterByMangaIdAndChapterId(mangaId, chapterId);
     }
 }
+
+//11 trái banh có 1 trái năng hơn tìm trái đó 
+//5 - 5 - 1 -> ra đáp án
+// 
+//
+//

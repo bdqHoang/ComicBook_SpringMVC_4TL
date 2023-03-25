@@ -17,8 +17,8 @@ public class FeedbackController {
     private FeedbackServices feedbackServices;
 
     @GetMapping(value = "/allfeedback")
-    public List<Feedback> getAllFeedback() {
-        return feedbackServices.getAllFeedback();
+    public List<Feedback> getAllFeedback(int id) {
+        return feedbackServices.getAllFeedback(id);
     }
 
     @GetMapping(value = "/getfeedback-userid")

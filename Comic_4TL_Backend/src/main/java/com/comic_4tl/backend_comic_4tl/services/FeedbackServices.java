@@ -13,8 +13,8 @@ public class FeedbackServices {
     @Autowired
     private FeedbackRespository feedbackRespository;
 
-    public List<Feedback> getAllFeedback() {
-        return feedbackRespository.findAll();
+    public List<Feedback> getAllFeedback(int id) {
+        return feedbackRespository.getAllFeedback(id);
     }
 
     public List<Feedback> getFeedbackByUserId(int id) {

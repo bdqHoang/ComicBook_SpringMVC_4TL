@@ -8,7 +8,10 @@ import org.springframework.data.jpa.repository.Query;
 import com.comic_4tl.backend_comic_4tl.model.ImageChapter;
 
 public interface ImageChapterRespository extends JpaRepository<ImageChapter, Integer> {
-    @Query(value = "select * from image_chapter where chapter_id = ?1", nativeQuery = true)
-    
-    public List<ImageChapter> findByChapter_id(int chapter_id);
+    @Query(value = "SELECT * FROM image_chapter WHERE chapter_id = ?1", nativeQuery = true)
+    List<ImageChapter> getChaptersByMangaId(int chapterId);
+
+    // find image chapter by chapter id and manga id in manga table
+    @Query(value = "SELECT * FROM image_chapter WHERE chapter_id = ?1 and ", nativeQuery = true)
+    List<ImageChapter> getImageChapterByMangaIdAndChapterId(int mangaId, int chapterId);
 }
