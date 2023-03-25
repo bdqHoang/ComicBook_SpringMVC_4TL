@@ -8,6 +8,7 @@ public class BackendComic4tlApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackendComic4tlApplication.class, args);
+
 	}
 
 }
