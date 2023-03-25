@@ -10,8 +10,8 @@ import lombok.Data;
 @Data
 public class GenreDetailKey implements Serializable {
     @Column(name = "genre_id", nullable = false)
-    private int genre_id;
+    private int genreId;
     @Column(name = "manga_id", nullable = false)
-    private int manga_id;
+    private int mangaId;
 
 }

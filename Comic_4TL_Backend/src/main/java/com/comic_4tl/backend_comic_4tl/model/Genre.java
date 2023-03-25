@@ -23,7 +23,7 @@ import lombok.Data;
 public class Genre {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private int genre_id;
+        private int genreId;
         @Column(name = "name", nullable = false)
         private String name;
 

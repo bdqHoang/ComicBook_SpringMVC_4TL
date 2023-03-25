@@ -25,11 +25,11 @@ public class Feedback {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int feedback_id;
-    @Column(name = "repply_id", nullable = false)
+    @Column(name = "repplyId", nullable = false)
     private int repply_id;
     @Column(name = "comment", nullable = false)
     private String comment;
-    @Column(name = "create_at", nullable = false)
+    @Column(name = "createAt", nullable = false)
     private Date create_at;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

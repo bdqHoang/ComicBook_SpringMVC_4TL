@@ -23,7 +23,7 @@ import lombok.Data;
 public class Ratting {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ratting_id;
+    private int rattingId;
     @Column(name = "number_of_ratting")
     private int ratting;
 

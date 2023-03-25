@@ -23,9 +23,9 @@ import lombok.Data;
 public class ImageChapter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int img_cha_id;
+    private int imgChaId;
     @Column(name = "img_src", nullable = false)
-    private String img_src;
+    private String imgSrc;
     @Column(name = "number", nullable = false)
     private int number;
 

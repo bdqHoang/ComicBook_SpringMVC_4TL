@@ -24,7 +24,7 @@ import lombok.Data;
 public class Translator {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int translator_id;
+    private int translatorId;
     @Column(name = "name", nullable = false)
     private String name;
 

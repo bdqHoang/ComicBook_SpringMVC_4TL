@@ -27,7 +27,7 @@ import lombok.Data;
 public class Manga {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int manga_id;
+    private int mangaId;
     @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "avatar")
