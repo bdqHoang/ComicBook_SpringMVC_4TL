@@ -1,23 +1,19 @@
 import React from "react";
 import Helper from "../homeComponent/helper/helper";
-import HomeServices from "../../services/HomeServices";
 
 const SlideSlick = (props) => {
 
-    let homeServices = new HomeServices();
-    homeServices.getAll().then((res) => {
-        console.log(res.data);
-    })
+    console.log(props.props);
 
     let helper = new Helper();
     
     var ratting;
 
-    ratting = helper.ratting(props.ratting);
+    ratting = helper.ratting(props.props.ratting);
 
     var genre;
 
-    genre = helper.genre(props.genre);
+    genre = helper.genre(props.props.listGenre);
 
     return(
         <div className="col-lg-4">
@@ -26,16 +22,15 @@ const SlideSlick = (props) => {
                     <div className="trend-bottom-img
                         mb-30">
                         <img className="play"
-                            src={props.avatar}
+                            src={props.props.avata}
                             alt=""/>
                         <div className="overlay_play">
                             <i className="fa-solid
-                                fa-heart">{props.views}</i>
+                                fa-heart">{props.props.views}</i>
                         </div>
                     </div>
                     <div className="trend-bottom-cap">
-                        <h4>I Really Don’t Want to
-                            Be the First </h4>
+                        <h4>{props.props.name}</h4>
                         <ul className="d-flex flex-wrap
                             star">
                             <li>{ratting}</li>

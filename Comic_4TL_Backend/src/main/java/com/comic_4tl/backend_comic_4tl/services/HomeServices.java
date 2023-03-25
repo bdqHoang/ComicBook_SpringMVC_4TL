@@ -15,8 +15,8 @@ public class HomeServices {
     MangaRespository mangaRespository;
 
     public List<Manga> getNewSeason() {
-        
-        return mangaRespository.findAll();
+
+        return mangaRespository.findTop4ByOrderByReleaseDayDesc();
     }
 
 }

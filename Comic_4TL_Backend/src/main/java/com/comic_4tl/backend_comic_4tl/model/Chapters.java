@@ -32,7 +32,7 @@ public class Chapters {
     private String name;
     @Column(name = "page_number", nullable = false)
     private int page_number;
-    @Column(name = "date_release", nullable = false)
+    @Column(name = "release_day", nullable = false)
     private Date release_day;
     @Column(name = "enable", nullable = false)
     private boolean enable;

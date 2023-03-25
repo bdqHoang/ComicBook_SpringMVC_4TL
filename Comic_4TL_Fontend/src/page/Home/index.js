@@ -1,12 +1,28 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 import NewSeason from "../../components/homeComponent/newSeason";
-function Index() {
+import HomeServices from "../../services/HomeServices";
+
+
+
+function Index(props) {
     const myStyle = { 
         background: 'url(https://yae.hifive03.com/assets/img/manga_banner/log.jpg) fixed no-repeat center/cover'
       };
+
+      const [state, setState] = useState([]);
+
+      let homeServices = new HomeServices();
+
+      useEffect(() => {
+        homeServices.getNewSeason().then((res) => {
+            setState(res.data);
+        })
+      }, []);
+      
+      props = state;
     return (
         < >
-            <NewSeason />
+            <NewSeason props={props} />
 
             <section id="manga" className="manga_filter pt-50 pb-20">
                 <div className="container">

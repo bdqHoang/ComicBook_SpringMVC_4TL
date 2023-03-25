@@ -3,6 +3,13 @@ import SlideSlick from "../templateBook/slickSlide";
 
 
 function NewSeason(props) {
+
+    let slickSlide = [];
+    for (let i = 0; i < props.props.length; i++) {
+        slickSlide.push(<SlideSlick props={props.props[i]}/>);
+    }   
+
+
     return (
         <>
 <section className="trending-area fix">
@@ -75,10 +82,7 @@ function NewSeason(props) {
                                     </div>
                                 </div>
                                 <div className="row trending-bottom-slider">
-                                    <SlideSlick></SlideSlick>
-                                    <SlideSlick></SlideSlick>
-                                    <SlideSlick></SlideSlick>
-                                    <SlideSlick></SlideSlick>
+                                    {slickSlide.map(slide=>slide)}
                                 </div>
                             </div>
                         </div>

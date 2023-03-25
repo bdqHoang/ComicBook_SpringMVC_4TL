@@ -1,7 +1,7 @@
 import React from "react";
 import Helper from "../homeComponent/helper/helper";
 
-const SlideSlick = (props) => {
+const RecentRelease = (props) => {
 
     let helper = new Helper();
     
@@ -40,4 +40,4 @@ const SlideSlick = (props) => {
     )
 }
 
-export default SlideSlick;
+export default RecentRelease;
