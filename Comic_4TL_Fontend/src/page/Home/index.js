@@ -20,6 +20,8 @@ function Index(props) {
       }, []);
       
       props = state;
+    };
+
     return (
         < >
             <NewSeason props={props} />

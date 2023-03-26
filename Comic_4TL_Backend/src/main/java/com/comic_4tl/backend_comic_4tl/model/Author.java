@@ -32,5 +32,4 @@ public class Author {
     @JsonManagedReference
     @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     private List<Manga> mangas = new ArrayList<>();
-
 }

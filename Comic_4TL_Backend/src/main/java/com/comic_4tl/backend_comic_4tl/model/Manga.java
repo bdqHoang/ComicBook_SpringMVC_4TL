@@ -24,7 +24,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "manga")
-public class Manga {
+public class Manga implements java.io.Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int mangaId;
