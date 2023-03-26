@@ -9,7 +9,6 @@ import lombok.Data;
 @Data
 public class RegisterRequest {
     @NotBlank(message = "Tên tài khoản không được để trống")
-    @Pattern(regexp = "^[a-zA-Z0-9_]*$", message = "Tên tài khoản không được chứa ký tự đặc biệt")
     private String name;
     @NotBlank(message = "Email không được để trống")
     @Email(message = "Email không đúng định dạng")

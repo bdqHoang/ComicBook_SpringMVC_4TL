@@ -8,7 +8,6 @@ function Index() {
     return (
         < >
             <NewSeason />
-            "asdasd" a'asdasd'
 
             <section id="manga" className="manga_filter pt-50 pb-20">
                 <div className="container">
