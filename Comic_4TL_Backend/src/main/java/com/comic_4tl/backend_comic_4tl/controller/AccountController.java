@@ -39,7 +39,10 @@ public class AccountController {
     }
 
     @GetMapping("/api/protected")
-    public String protectedResource() {
-        return "protected";
+    public ResponseEntity<?> protectedResource(Authentication authentication) {
+        // return user
+        var userDetails = (UserDetailsImpl) authentication.getPrincipal();
+        var user = userDetails.getUser();
+        return ResponseEntity.ok(user);
     }
 }
