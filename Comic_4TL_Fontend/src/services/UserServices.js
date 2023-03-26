@@ -1,5 +1,4 @@
 import api from "./api";
-import jwt from 'jsonwebtoken';
 
 class UserServices{
 
@@ -11,13 +10,17 @@ class UserServices{
         console.log(response.data);
         if(response.data.token){
             localStorage.setItem('token', response.data.token);
-            alert(response.data.message);
-            console.log(jwt.decode(response.data.token));
         }else{
             alert(response.data.message);
         }
         return response.data;
 
+    }
+
+    // get infotmantion user
+    async getUserInfo(){
+        const response = await api.get('/api/protected');
+        return response.data;
     }
 
     async logout(){

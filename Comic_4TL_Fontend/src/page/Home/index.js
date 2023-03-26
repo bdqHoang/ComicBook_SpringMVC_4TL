@@ -2,6 +2,7 @@ import React, {useState, useEffect } from "react";
 import NewSeason from "../../components/homeComponent/newSeason";
 import HomeServices from "../../services/HomeServices";
 import Login from "../User/Login";
+import SignIn from "../User/Register";
 
 function Index(props) {
    
@@ -1321,6 +1322,7 @@ function Index(props) {
                 </div>
             </section>
             <Login/>
+            <SignIn/>
         </>
 
     )

@@ -1,4 +1,6 @@
 import React from "react";
+import { CheckLogin } from "../../page/User/Login";
+
 
 export default function Header() {
     return (
@@ -80,11 +82,7 @@ export default function Header() {
                                         <li><a href="manga_all.html">Latest
                                             Manga</a></li> <li><a
                                                 href="blog.html">Blog</a></li>
-                                        <li><a className="js-show-modal1"
-                                            href="#"><i
-                                                className="fa-regular
-                                                            fa-user"></i>
-                                            Login/Sign Up</a></li>
+                                        <li><CheckLogin/></li>
                                     </ul> </nav> </div> </div> <div
                                         className="col-lg-3 col-xl-2 col-md-12 d-flex
                                     justify-content-center"> <ul className="top-info

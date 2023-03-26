@@ -17,6 +17,10 @@
     "react-helmet": "^6.1.0",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
+    "stream": "^0.0.2",
+    "stream-browserify": "^3.0.0",
+    "until": "^0.1.1",
+    "util": "^0.12.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -42,5 +46,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "browser": {
+    "crypto": false,
+    "stream": false
   }
 }

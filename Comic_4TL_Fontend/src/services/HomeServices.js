@@ -3,13 +3,13 @@ class HomeServices{
 
     // Get all comics new season
     getNewSeason(){
-        return api.get("/new-season");
+        return api.get("/home/new-season");
     }
 
 
     // Get all comics recent release
     getRecentRelease(){
-        return api.get("/recent");
+        return api.get("/home/recent");
     }
 
 

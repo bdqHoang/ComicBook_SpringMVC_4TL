@@ -45,9 +45,11 @@ const Login = () => {
                                     <input type="password" className="form-control"
                                         id="password"/>
                                 </div>
-                                <button type="submit" className="modal_btn
-                                    text-center">Đăng nhập</button>
+                                <button type="submit" className="modal_btn text-center">Đăng nhập</button>
+                                
                             </form>
+                            <button className="modal_btn text-center js-hide-modal1 js-show-modal2" style={{marginTop: 20}}>Đăng ký</button>
+
                         </div>
                     </div>
                 </div>
@@ -55,6 +57,18 @@ const Login = () => {
         </div>
     </>
   );
+}
+
+export function CheckLogin(){
+    if(localStorage.getItem('token') == null){
+        return <><a className="js-show-modal" href="/login"><i
+        className="fa-regular fa-user"></i>Login/Sign Up</a></>;
+    }else{
+        return <>
+            <a className="js-show-modal" href="/login"><i
+            className="fa-regular fa-user"></i>Login/Sign Up</a>
+        </>;
+    }
 }
 
 export default Login;
