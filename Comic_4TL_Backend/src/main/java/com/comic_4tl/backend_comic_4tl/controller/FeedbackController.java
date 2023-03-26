@@ -11,6 +11,7 @@ import com.comic_4tl.backend_comic_4tl.model.Feedback;
 import com.comic_4tl.backend_comic_4tl.services.FeedbackServices;
 
 @RestController
+@RequestMapping(value = "/feedback")
 public class FeedbackController {
     @Autowired
     private FeedbackServices feedbackServices;
