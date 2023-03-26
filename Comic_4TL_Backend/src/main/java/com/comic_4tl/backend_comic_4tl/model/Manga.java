@@ -26,7 +26,7 @@ import lombok.Data;
 @Table(name = "manga")
 public class Manga implements java.io.Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private int mangaId;
     @Column(name = "name", nullable = false)
     private String name;

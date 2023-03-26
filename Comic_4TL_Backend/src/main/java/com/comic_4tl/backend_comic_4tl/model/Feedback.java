@@ -23,7 +23,7 @@ import lombok.Data;
 @Table(name = "feedback")
 public class Feedback {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private int feedback_id;
     @Column(name = "repplyId", nullable = false)
     private int repply_id;

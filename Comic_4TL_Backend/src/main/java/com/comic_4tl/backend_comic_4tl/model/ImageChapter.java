@@ -22,7 +22,7 @@ import lombok.Data;
 @Table(name = "image_chapter")
 public class ImageChapter {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private int imgChaId;
     @Column(name = "img_src", nullable = false)
     private String imgSrc;

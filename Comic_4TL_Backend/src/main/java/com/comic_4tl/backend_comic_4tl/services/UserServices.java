@@ -6,9 +6,7 @@ import com.comic_4tl.backend_comic_4tl.model.Role;
 import com.comic_4tl.backend_comic_4tl.request.LoginRequest;
 import com.comic_4tl.backend_comic_4tl.request.RegisterRequest;
 import com.comic_4tl.backend_comic_4tl.security.JwtUtils;
-import com.comic_4tl.backend_comic_4tl.security.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -36,9 +34,6 @@ public class UserServices {
         return userRespository.findAll();
     }
 
-    public User findByUsername(String name) {
-        return userRespository.findByName(name);
-    }
     public String login(LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
@@ -46,6 +41,7 @@ public class UserServices {
         String jwt = jwtUtils.generateJwtToken(authentication);
         return jwt;
     }
+
     public User register(RegisterRequest registerRequest) {
         User user = new User();
         user.setName(registerRequest.getName());
