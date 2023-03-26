@@ -2,10 +2,12 @@ package com.comic_4tl.backend_comic_4tl.controller;
 
 import com.comic_4tl.backend_comic_4tl.request.LoginRequest;
 import com.comic_4tl.backend_comic_4tl.request.RegisterRequest;
+import com.comic_4tl.backend_comic_4tl.security.UserDetailsImpl;
 import com.comic_4tl.backend_comic_4tl.services.UserServices;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
