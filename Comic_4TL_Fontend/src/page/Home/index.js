@@ -7,7 +7,7 @@ import HomeServices from "../../services/HomeServices";
 function Index(props) {
     const myStyle = { 
         background: 'url(https://yae.hifive03.com/assets/img/manga_banner/log.jpg) fixed no-repeat center/cover'
-      };
+    };
 
       const [state, setState] = useState([]);
 
@@ -20,6 +20,7 @@ function Index(props) {
       }, []);
       
       props = state;
+
     return (
         < >
             <NewSeason props={props} />
