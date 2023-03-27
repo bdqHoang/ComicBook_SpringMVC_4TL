@@ -1256,3 +1256,5 @@ function MangaSinglePage() {
     </>
   );
 }
+
+export {MangaSinglePage};
