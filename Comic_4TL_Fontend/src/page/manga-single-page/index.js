@@ -382,23 +382,23 @@ function MangaSinglePage() {
                 >
                   Read more
                 </button>
-                {/* <script>
-                            function myFunction() {
-                                var dots = document.getElementById("dots");
-                                var moreText = document.getElementById("more");
-                                var btnText = document.getElementById("read_more");
+                { 
+                  function myFunction() {
+                    var dots = document.getElementById("dots");
+                    var moreText = document.getElementById("more");
+                    var btnText = document.getElementById("read_more");
 
-                                if (dots.style.display === "none") {
-                                    dots.style.display = "inline";
-                                    btnText.innerHTML = "Read more";
-                                    moreText.style.display = "none";
-                                } else {
-                                    dots.style.display = "none";
-                                    btnText.innerHTML = "Read less";
-                                    moreText.style.display = "inline";
-                                }
-                            }
-                        </script> */}
+                    if (dots.style.display === "none") {
+                     dots.style.display = "inline";
+                     btnText.innerHTML = "Read more";
+                     moreText.style.display = "none";
+                    } else {
+                      dots.style.display = "none";
+                      btnText.innerHTML = "Read less";
+                      moreText.style.display = "inline";
+                    }
+                  }         
+                }
               </div>
               <div class="manga_info">
                 <div class="section-tittle mt-30 mb-30">
@@ -599,8 +599,7 @@ function MangaSinglePage() {
                       </li>
                       <li>
                         <i
-                          class="fa-solid
-                                                fa-star-half-stroke"
+                          class="fa-solid fa-star-half-stroke"
                         ></i>
                       </li>
                       <li>
@@ -1034,12 +1033,7 @@ function MangaSinglePage() {
                       </a>
                     </li>
                     <li>
-                      <a
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Discord"
-                        href="#"
-                      >
+                      <a data-toggle="tooltip" data-placement="top" title="Discord" href="#" >
                         <i
                           class="fa-brands
                                                 fa-discord"
