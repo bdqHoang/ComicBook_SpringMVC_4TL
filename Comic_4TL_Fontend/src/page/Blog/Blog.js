@@ -1,195 +1,9 @@
+import React from "react";
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Yae Manga House - Anime Manga or Comic and Game Blog Website
-            Template</title>
-        <link rel="icon"
-            href="https://yae.hifive03.com/assets/img/logo/favicon.ico">
-
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/slicknav.css">
-        <link rel="stylesheet" href="assets/css/acmeticker.css">
-        <link rel="stylesheet" href="assets/css/star-rating.min.css">
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <link rel="stylesheet" href="assets/css/slick.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
-    <body>
-
-        <div class="wrap">
-            <canvas id="sakura"></canvas>
-        </div>
-
-
-        <div id="preloader-active">
-            <div class="preloader d-flex align-items-center
-                justify-content-center">
-                <div class="preloader-inner position-relative">
-                    <div class="preloader-circle"></div>
-                    <div class="preloader-img pere-text">
-                        <img
-                            src="https://yae.hifive03.com/assets/img/logo/preloader.png"
-                            alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <header>
-            <div class="header-area">
-                <div class="main-header ">
-                    <div class="header-top d-none d-md-block">
-                        <div class="container">
-                            <div class="col-xl-12">
-                                <div class="header-info-right d-flex
-                                    justify-content-end">
-                                    <ul class="header-social">
-                                        <li><a data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Facebook" href="#"><i
-                                                    class="fa-brands
-                                                    fa-facebook-f"></i></a></li>
-                                        <li><a data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Twitter" href="#"><i
-                                                    class="fa-brands
-                                                    fa-twitter"></i></a></li>
-                                        <li><a data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Discord" href="#"><i
-                                                    class="fa-brands
-                                                    fa-discord"></i></a></li>
-                                        <li><a data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Reddit" href="#"><i
-                                                    class="fa-brands
-                                                    fa-reddit-alien"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="header-mid d-none d-md-block">
-                        <div class="container">
-                            <div class="row d-flex align-items-center">
-
-                                <div class="col-xl-3 col-lg-3 col-md-3">
-                                    <div class="logo">
-                                        <a href="index.html"><img
-                                                src="https://yae.hifive03.com/assets/img/logo/logo.png"
-                                                alt=""></a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-9 col-lg-9 col-md-9">
-                                    <div class="header-banner f-right ">
-                                        <img
-                                            src="https://yae.hifive03.com/assets/img/app/app.jpg"
-                                            alt="">
-                                        <div class="app_overlay">
-                                            <ul class="d-flex flex-wrap
-                                                justify-content-between">
-                                                <li class="mr-1"><a href="#">
-                                                        <img class="w-100"
-                                                            src="https://yae.hifive03.com/assets/img/app/app1.png"
-                                                            alt="">
-                                                    </a></li>
-                                                <li class="ml-1"><a href="#">
-                                                        <img class="w-100"
-                                                            src="https://yae.hifive03.com/assets/img/app/app2.png"
-                                                            alt="">
-                                                    </a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="header-bottom header-sticky">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-xl-10 col-lg-8 col-md-12
-                                    header-flex">
-
-                                    <div class="sticky-logo">
-                                        <a href="index.html"><img
-                                                src="https://yae.hifive03.com/assets/img/logo/logo.png"
-                                                alt=""></a>
-                                    </div>
-
-                                    <div class="main-menu d-none d-md-block">
-                                        <nav>
-                                            <ul id="navigation">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="genres.html">Genres</a></li>
-                                                <li><a href="manga_all.html">Latest
-                                                        Manga</a></li>
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a class="js-show-modal1"
-                                                        href="#"><i
-                                                            class="fa-regular
-                                                            fa-user"></i>
-                                                        Login/Sign Up</a></li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-xl-2 col-md-12 d-flex
-                                    justify-content-center">
-                                    <ul class="top-info d-flex flex-wrap
-                                        text-center text-md-center ">
-                                        <li class="js-show-modal-search"><i
-                                                class="fa-solid
-                                                fa-magnifying-glass"></i>
-                                            <p class="info-text">Search Manga</p>
-                                        </li>
-                                    </ul>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="modal-search-header flex-c-m trans-04
-                                js-hide-modal-search">
-                                <div class="container-search-header">
-                                    <button class="flex-c-m
-                                        btn-hide-modal-search trans-04
-                                        js-hide-modal-search">
-                                        <img
-                                            src="https://yae.hifive03.com/assets/img/icon/icon-close.png"
-                                            alt="CLOSE">
-                                    </button>
-                                    <form class="wrap-search-header flex-w
-                                        p-l-15">
-                                        <button class="flex-c-m trans-04">
-                                            <i class="fa-solid
-                                                fa-magnifying-glass"></i>
-                                        </button>
-                                        <input class="plh3" type="text"
-                                            name="search"
-                                            placeholder="Search...">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-md-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </header>
-
-
-        <section id="breadcrumb">
+function Blog() {
+  return (
+    <>
+                <section id="breadcrumb">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -262,7 +76,7 @@
                                 <div class="blog_item_img">
                                     <img class="card-img rounded-0"
                                         src="https://yae.hifive03.com/assets/img/blog/single_blog_1.png"
-                                        alt="">
+                                        alt=""/>
                                     <a href="#" class="blog_item_date">
                                         <h3>15</h3>
                                         <p>Jan</p>
@@ -341,7 +155,7 @@
                                 <div class="blog_item_img">
                                     <img class="card-img rounded-0"
                                         src="https://yae.hifive03.com/assets/img/blog/single_blog_2.png"
-                                        alt="">
+                                        alt=""/>
                                     <a href="#" class="blog_item_date">
                                         <h3>15</h3>
                                         <p>Jan</p>
@@ -421,7 +235,7 @@
                                 <div class="blog_item_img">
                                     <img class="card-img rounded-0"
                                         src="https://yae.hifive03.com/assets/img/blog/single_blog_3.png"
-                                        alt="">
+                                        alt=""/>
                                     <a href="#" class="blog_item_date">
                                         <h3>15</h3>
                                         <p>Jan</p>
@@ -491,7 +305,7 @@
                                                 (!window.__cfRLUnblockHandlers)
                                                 return false; this.placeholder=
                                                 'Search Keyword'"
-                                                data-cf-modified-96ebd54b2b925230ebb2b147-="">
+                                                data-cf-modified-96ebd54b2b925230ebb2b147-=""/>
                                             <div class="input-group-append">
                                                 <button class="btns"
                                                     type="button"><i
@@ -557,7 +371,7 @@
                                 <div class="media post_item">
                                     <img
                                         src="https://yae.hifive03.com/assets/img/blog/post_1.png"
-                                        alt="post">
+                                        alt="post"/>
                                     <div class="media-body">
                                         <a href="single-blog.html">
                                             <h3>Version 3.5 "Windblume's Breath"
@@ -569,7 +383,7 @@
                                 <div class="media post_item">
                                     <img
                                         src="https://yae.hifive03.com/assets/img/blog/post_2.png"
-                                        alt="post">
+                                        alt="post"/>
                                     <div class="media-body">
                                         <a href="single-blog.html">
                                             <h3>Genshin Impact version 3.5
@@ -582,7 +396,7 @@
                                 <div class="media post_item">
                                     <img
                                         src="https://yae.hifive03.com/assets/img/blog/post_3.png"
-                                        alt="post">
+                                        alt="post"/>
                                     <div class="media-body">
                                         <a href="single-blog.html">
                                             <h3>Story Teaser: Echoes of the
@@ -594,7 +408,7 @@
                                 <div class="media post_item">
                                     <img
                                         src="https://yae.hifive03.com/assets/img/blog/post_4.png"
-                                        alt="post">
+                                        alt="post"/>
                                     <div class="media-body">
                                         <a href="single-blog.html">
                                             <h3>Genshin Impact Confirms Dehya
@@ -647,42 +461,42 @@
                                         <a href="#">
                                             <img class="img-fluid"
                                                 src="https://yae.hifive03.com/assets/img/blog/social_post1.png"
-                                                alt="">
+                                                alt=""/>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
                                             <img class="img-fluid"
                                                 src="https://yae.hifive03.com/assets/img/blog/social_post2.png"
-                                                alt="">
+                                                alt=""/>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
                                             <img class="img-fluid"
                                                 src="https://yae.hifive03.com/assets/img/blog/social_post3.png"
-                                                alt="">
+                                                alt=""/>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
                                             <img class="img-fluid"
                                                 src="https://yae.hifive03.com/assets/img/blog/social_post4.png"
-                                                alt="">
+                                                alt=""/>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
                                             <img class="img-fluid"
                                                 src="https://yae.hifive03.com/assets/img/blog/social_post5.png"
-                                                alt="">
+                                                alt=""/>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
                                             <img class="img-fluid"
                                                 src="https://yae.hifive03.com/assets/img/blog/social_post6.png"
-                                                alt="">
+                                                alt=""/>
                                         </a>
                                     </li>
                                 </ul>
@@ -695,7 +509,7 @@
                                 <form action="#">
                                     <div class="form-group">
                                         <input type="email" class="form-control"
-                                            placeholder='Enter email' required>
+                                            placeholder='Enter email' required/>
                                     </div>
                                     <button class="button rounded-0 primary-bg
                                         text-white w-100 btn_1 boxed-btn"
@@ -707,253 +521,8 @@
                 </div>
             </div>
         </section>
+    </>
+  );
+}
 
-
-        <footer id="footer" class="footer bg-overlay">
-            <div class="footer-main">
-                <div class="container">
-                    <div class="row">
-                        <div class="footer_img">
-                            <img class=""
-                                src="https://yae.hifive03.com/assets/img/logo/girl.png"
-                                alt="">
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="AtoZ_list">
-                                <div class="d-flex flex-wrap">
-                                    <h4>A-Z LIST</h4>
-                                    <p>Searching manga order by alphabet name A
-                                        to Z.</p>
-                                </div>
-                                <ul class="d-flex flex-wrap">
-                                    <li><a href="#">ALL</a></li>
-                                    <li><a href="#">#</a></li>
-                                    <li><a href="#">0-9</a></li>
-                                    <li><a href="#">B</a></li>
-                                    <li><a href="#">C</a></li>
-                                    <li><a href="#">D</a></li>
-                                    <li><a href="#">E</a></li>
-                                    <li><a href="#">F</a></li>
-                                    <li><a href="#">G</a></li>
-                                    <li><a href="#">H</a></li>
-                                    <li><a href="#">I</a></li>
-                                    <li><a href="#">J</a></li>
-                                    <li><a href="#">K</a></li>
-                                    <li><a href="#">L</a></li>
-                                    <li><a href="#">M</a></li>
-                                    <li><a href="#">N</a></li>
-                                    <li><a href="#">O</a></li>
-                                    <li><a href="#">P</a></li>
-                                    <li><a href="#">Q</a></li>
-                                    <li><a href="#">R</a></li>
-                                    <li><a href="#">S</a></li>
-                                    <li><a href="#">T</a></li>
-                                    <li><a href="#">U</a></li>
-                                    <li><a href="#">V</a></li>
-                                    <li><a href="#">W</a></li>
-                                    <li><a href="#">X</a></li>
-                                    <li><a href="#">Y</a></li>
-                                    <li><a href="#">Z</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-between mt-5">
-                        <div class="col-lg-4 col-md-6 footer-widget
-                            footer-about">
-                            <img loading="lazy" class="footer-logo"
-                                src="https://yae.hifive03.com/assets/img/logo/logo.png"
-                                alt="logo">
-                            <p>Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed do eiusmod tempor inci
-                                done
-                                idunt ut
-                                labore et dolore magna aliqua.</p>
-                            <div class="footer-social">
-                                <ul>
-                                    <li><a data-toggle="tooltip"
-                                            data-placement="top"
-                                            title="Facebook" href="#"><i
-                                                class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a data-toggle="tooltip"
-                                            data-placement="top" title="Twitter"
-                                            href="#"><i class="fa-brands
-                                                fa-twitter"></i></a></li>
-                                    <li><a data-toggle="tooltip"
-                                            data-placement="top" title="Discord"
-                                            href="#"><i class="fa-brands
-                                                fa-discord"></i></a></li>
-                                    <li><a data-toggle="tooltip"
-                                            data-placement="top" title="Reddit"
-                                            href="#"><i class="fa-brands
-                                                fa-reddit-alien"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 footer-widget mt-5
-                            mt-md-0">
-                            <h3 class="widget-title">Help</h3>
-                            <ul class="list-arrow text-capitalize">
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">privacy policy</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0
-                            footer-widget">
-                            <h3 class="widget-title">Links</h3>
-                            <ul class="list-arrow text-capitalize">
-                                <li><a href="#">A-Z List</a></li>
-                                <li><a href="#">Upcoming</a></li>
-                                <li><a href="#">Most Popular</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 col-6">
-                            <div class="copyright-info">
-                                <span>Copyright &copy; <script>
-                                    document.write(new Date().getFullYear())
-                                </script>,
-                                    Designed by <a
-                                        href="https://www.templatemonster.com/authors/soulknight404/">SoulKnight404</a></span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-6">
-                            <div class="footer-menu text-end text-md-right">
-                                <ul class="list-unstyled">
-                                    <li><a href="about.html">Contact</a></li>
-                                    <li><a href="team.html">FAQ</a></li>
-                                    <li><a href="news-left-sidebar.html">Privacy
-                                            Policy</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="back-to-top" data-spy="affix" data-offset-top="10"
-                        class="back-to-top position-fixed">
-                        <button class="btn btn-primary" title="Back to Top">
-                            <i class="fa fa-angle-double-up"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-
-        <div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
-            <div class="overlay-modal1 js-hide-modal1" style="background:
-                url(https://yae.hifive03.com/assets/img/manga_banner/log.jpg)
-                fixed no-repeat
-                center/cover ;"></div>
-            <div class="container">
-                <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-                    <button class="how-pos3 hov3 trans-04 js-hide-modal1">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                    <div class="row">
-                        <div class="col-lg-6 m-auto">
-                            <form id="form" novalidate action="#" method="post">
-                                <div class="tit_form">
-                                    <h3>Join Yae Manga House Now</h3>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email
-                                        address</label>
-                                    <input type="email" data-validation="email"
-                                        data-content="Email has a invalid
-                                        format" class="form-control"
-                                        name="email" id="email">
-                                    <div class="form_text">We'll never share
-                                        your email with anyone else.</div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1"
-                                        class="form-label">Password</label>
-                                    <input type="password" class="form-control"
-                                        id="exampleInputPassword1">
-                                </div>
-                                <div class="mb-3 form-check">
-                                    <input type="checkbox"
-                                        class="form-check-input"
-                                        id="exampleCheck1">
-                                    <label class="form-check-label"
-                                        for="exampleCheck1">Check me out</label>
-                                </div>
-                                <button type="submit" class="modal_btn
-                                    text-center">Submit</button>
-                                <div class="form_icons">
-                                    <div class="icon_tit">Sign in with social
-                                        account</div>
-                                    <ul class="d-flex flex-wrap text-center
-                                        justify-content-center ">
-                                        <li class="goo"><a href="#"><i
-                                                    class="fa-brands fa-google"></i></a></li>
-                                        <li class="fac"><a href="#"><i
-                                                    class="fa-brands
-                                                    fa-facebook-f"></i></a></li>
-                                        <li class="twi"><a href="#"><i
-                                                    class="fa-brands
-                                                    fa-twitter"></i></a></li>
-                                        <li class="ins"><a href="#"><i
-                                                    class="fa-brands
-                                                    fa-instagram"></i></a></li>
-                                        <li class="pat"><a href="#"><i
-                                                    class="fa-brands
-                                                    fa-patreon"></i></a></li>
-                                    </ul>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <script src="assets/js/jquery-3.6.0.min.js"></script>
-
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/popper.min.js"></script>
-
-        <script src="assets/js/jquery.slicknav.min.js"></script>
-
-        <script src="assets/js/slick.min.js"></script>
-
-        <script src="assets/js/form_validation.js"></script>
-        <script>
-        $(document).ready(function () {
-            $("#form").xvalidation({
-                theme: "materialize"
-            });
-            $("#form").submit(function (evt) {
-                evt.preventDefault();
-                evt.stopPropagation();
-                if ($("#form").data().xvalidation.methods.validate()) {
-                    swal("Thanks!", "We Will Contact You Soon", "success");
-                }
-                return false;
-            });
-        });
-    </script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script src="assets/js/star-rating.min.js"></script>
-
-        <script src="assets/js/fontawsome.js"></script>
-
-        <script src="assets/js/jquery.magnific-popup.js"></script>
-
-        <script src="assets/js/acmeticker.min.js"></script>
-
-        <script src="assets/js/jquery.scrollUp.min.js"></script>
-
-        <script src="assets/js/main.js"></script>
-        <script
-            src="assets/js/rocket-loader.min.js"
-            data-cf-settings="96ebd54b2b925230ebb2b147-|49" defer=""></script></body>
-</html>
+export default Blog;

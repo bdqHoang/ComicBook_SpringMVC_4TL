@@ -22,7 +22,7 @@ import lombok.Data;
 @Table(name = "genre")
 public class Genre {
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @GeneratedValue(strategy = GenerationType.TABLE)
         private int genreId;
         @Column(name = "name", nullable = false)
         private String name;

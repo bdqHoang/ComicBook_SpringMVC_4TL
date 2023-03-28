@@ -2,12 +2,8 @@ import React, {useState, useEffect } from "react";
 import NewSeason from "../../components/homeComponent/newSeason";
 import HomeServices from "../../services/HomeServices";
 
-
-
 function Index(props) {
-    const myStyle = { 
-        background: 'url(https://yae.hifive03.com/assets/img/manga_banner/log.jpg) fixed no-repeat center/cover'
-    };
+   
 
       const [state, setState] = useState([]);
 
@@ -20,7 +16,6 @@ function Index(props) {
       }, []);
       
       props = state;
-
     return (
         < >
             <NewSeason props={props} />
@@ -1324,72 +1319,6 @@ function Index(props) {
                     </div>
                 </div>
             </section>
-
-            <div className="wrap-modal1 js-modal1 p-t-60 p-b-20">
-            <div className="overlay-modal1 js-hide-modal1" style={myStyle}></div>
-            <div className="container">
-                <div className="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-                    <button className="how-pos3 hov3 trans-04 js-hide-modal1">
-                        <i className="fa-solid fa-xmark"></i>
-                    </button>
-                    <div className="row">
-                        <div className="col-lg-6 m-auto">
-                            <form id="form" noValidate action="#" method="post">
-                                <div className="tit_form">
-                                    <h3>Join Yae Manga House Now</h3>
-                                </div>
-                                <div className="mb-3">
-                                    <label htmlFor="email" className="form-label">Email
-                                        address</label>
-                                    <input type="email" data-validation="email"
-                                        data-content="Email has a invalid
-                                        format" className="form-control"
-                                        name="email" id="email"/>
-                                    <div className="form_text">We'll never share
-                                        your email with anyone else.</div>
-                                </div>
-                                <div className="mb-3">
-                                    <label htmlFor="exampleInputPassword1"
-                                        className="form-label">Password</label>
-                                    <input type="password" className="form-control"
-                                        id="exampleInputPassword1"/>
-                                </div>
-                                <div className="mb-3 form-check">
-                                    <input type="checkbox"
-                                        className="form-check-input"
-                                        id="exampleCheck1"/>
-                                    <label className="form-check-label"
-                                        htmlFor="exampleCheck1">Check me out</label>
-                                </div>
-                                <button type="submit" className="modal_btn
-                                    text-center">Submit</button>
-                                <div className="form_icons">
-                                    <div className="icon_tit">Sign in with social
-                                        account</div>
-                                    <ul className="d-flex flex-wrap text-center
-                                        justify-content-center ">
-                                        <li className="goo"><a href="#"><i
-                                                    className="fa-brands fa-google"></i></a></li>
-                                        <li className="fac"><a href="#"><i
-                                                    className="fa-brands
-                                                    fa-facebook-f"></i></a></li>
-                                        <li className="twi"><a href="#"><i
-                                                    className="fa-brands
-                                                    fa-twitter"></i></a></li>
-                                        <li className="ins"><a href="#"><i
-                                                    className="fa-brands
-                                                    fa-instagram"></i></a></li>
-                                        <li className="pat"><a href="#"><i
-                                                    className="fa-brands
-                                                    fa-patreon"></i></a></li>
-                                    </ul>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         </>
 
     )

@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ab8188f-be8b-4761-90ba-99b7ee1d099d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/controller/ChapterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/controller/ChapterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/repository/ImageChapterRespository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/repository/ImageChapterRespository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/services/ChapterServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/services/ChapterServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/model/GenreDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/model/GenreDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/repository/GenreRespository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/repository/GenreRespository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/repository/MangaRespository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/repository/MangaRespository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/services/HomeServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/services/HomeServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/services/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Backend/src/main/java/com/comic_4tl/backend_comic_4tl/services/UserServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Fontend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Fontend/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Fontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Fontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Fontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Fontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Fontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Fontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Fontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Fontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Fontend/src/components/templateBook/slickSlide.js" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Fontend/src/components/templateBook/slickSlide.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Fontend/src/page/Home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Fontend/src/page/Home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Fontend/src/page/User/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Fontend/src/page/User/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Fontend/src/page/User/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Fontend/src/page/User/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comic_4TL_Fontend/src/services/UserServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/Comic_4TL_Fontend/src/services/UserServices.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

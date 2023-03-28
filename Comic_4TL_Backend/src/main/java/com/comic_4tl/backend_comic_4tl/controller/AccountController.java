@@ -1,23 +1,15 @@
 package com.comic_4tl.backend_comic_4tl.controller;
 
-import com.comic_4tl.backend_comic_4tl.repository.UserRespository;
 import com.comic_4tl.backend_comic_4tl.request.LoginRequest;
 import com.comic_4tl.backend_comic_4tl.request.RegisterRequest;
-import com.comic_4tl.backend_comic_4tl.security.JwtUtils;
 import com.comic_4tl.backend_comic_4tl.security.UserDetailsImpl;
 import com.comic_4tl.backend_comic_4tl.services.UserServices;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.stream.Collectors;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class AccountController {
@@ -38,6 +30,7 @@ public class AccountController {
         };
         return ResponseEntity.ok(response);
     }
+
     @PostMapping("/api/register")
     public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest registerRequest) {
         var user = userServices.register(registerRequest);
