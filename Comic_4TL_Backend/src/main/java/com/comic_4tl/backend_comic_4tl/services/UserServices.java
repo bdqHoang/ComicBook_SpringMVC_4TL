@@ -47,6 +47,7 @@ public class UserServices {
         user.setName(registerRequest.getName());
         user.setEmail(registerRequest.getEmail());
         user.setPassword(encoder.encode(registerRequest.getPassword()));
+        
         user.setAvatar(registerRequest.getAvatar());
         user.setRole(Role.ROLE_USER);
         user.setEnable(true);

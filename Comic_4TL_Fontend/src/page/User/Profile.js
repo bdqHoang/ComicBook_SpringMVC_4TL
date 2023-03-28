@@ -1,41 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import UserServices from "../../services/UserServices";
 
-function SignIn(){
-    var userServices = new UserServices();
-
-     const myStyle = { 
+const Profile = (pros) => {
+    const myStyle = { 
         background: 'url(https://yae.hifive03.com/assets/img/manga_banner/log.jpg) fixed no-repeat center/cover',
         marginBotton: 20
     };
     const fontStyle = {
         color: "black"
     }
-
-    const handleRegister = async (e) => {
-        e.preventDefault();
-        var user = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            password: document.getElementById("password").value,
-        }
-        if(user.password != document.getElementById("re_password").value){
-            alert("Mật khẩu không khớp");
-            return ;
-        }
-        await  userServices.register(user);
-    }
-
-
-      
-
-  return(
-    <>
-        <div className="container"  style={myStyle}>
+    return(
+        <>
+            <div className="container"  style={myStyle}>
             <div className="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
                 <div className="row">
                     <div className="col-lg-6 m-auto">
-                        <form onSubmit={handleRegister}>
+                        <form>
                             <div className="tit_form">
                                 <h3>Hãy đăng tài khoản</h3>
                             </div>
@@ -72,7 +52,9 @@ function SignIn(){
                 </div>
             </div>
         </div>
-    </>
-  );
+        </>
+    );
 }
-export default SignIn;
+
+
+export default Profile;

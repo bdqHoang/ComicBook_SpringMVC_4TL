@@ -3,9 +3,12 @@ import './App.css';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import Index from './page/Home';
+import Login from './page/User/Login';
+import Profile from './page/User/Profile';
 // import Genre from './page/Genre';
 // import Blog from './page/Blog/Blog';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SignIn from './page/User/Register';
 
 
 function App() {
@@ -19,18 +22,29 @@ function App() {
                 <Index></Index>
                 <Footer></Footer>
             </div>} />
-          {/* <Route path='/genre' element={
+            <Route path={""} Index element={
             <div className='App'>
                 <Header></Header>
-                <Genre></Genre>
+                <Index></Index>
                 <Footer></Footer>
             </div>} />
-            <Route path='/blog' element={
-            <div className='App'>
+          <Route  path='/login' element={<div className='App'>
                 <Header></Header>
-                <Blog></Blog>
+                <Login></Login>
                 <Footer></Footer>
-            </div>} /> */}
+          </div>} />
+
+          <Route path='/sign-in' element={<div className='App'>
+                <Header></Header>
+                <SignIn></SignIn>
+                <Footer></Footer>
+          </div>} />
+
+          <Route  path='/profile' element={<div className='App'>
+                <Header></Header>
+                <Profile></Profile>
+                <Footer></Footer>
+          </div>}/>
         </Route>
       </Routes>
         

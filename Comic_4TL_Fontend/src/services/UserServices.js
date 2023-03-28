@@ -3,17 +3,22 @@ import api from "./api";
 class UserServices{
 
     async login(email, password){
-        const response = await api.post('/api/login', {
-            email,
-            password
-        });
-        console.log(response.data);
-        if(response.data.token){
-            localStorage.setItem('token', response.data.token);
-        }else{
-            alert(response.data.message);
+        try{
+            const response = await api.post('/api/login', {
+                email,
+                password
+            });
+            if(response.data.token){
+                localStorage.setItem('token', response.data.token);
+                api.interceptors.request.use(function(config) {
+                    config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
+                    return config;
+                });
+            }
+            return response.data;
+        }catch(error){
+           return null;
         }
-        return response.data;
 
     }
 
@@ -25,6 +30,17 @@ class UserServices{
 
     async logout(){
         localStorage.removeItem('token');
+    }
+    
+
+    async register(user){
+        try{
+            const response = await api.post('/api/register', user);
+            alert("Đăng ký thành công")
+            window.location = "/login";
+        }catch(error){
+            alert(error.response.data.errors);
+        }
     }
 
 }

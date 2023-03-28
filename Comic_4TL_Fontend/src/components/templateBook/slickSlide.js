@@ -3,8 +3,6 @@ import Helper from "../homeComponent/helper/helper";
 
 const SlideSlick = (props) => {
 
-    console.log(props.props);
-
     let helper = new Helper();
     
     var ratting;

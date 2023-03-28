@@ -31,4 +31,5 @@ public class GenreDetail {
     @JsonBackReference
     private Manga manga;
 
+
 }

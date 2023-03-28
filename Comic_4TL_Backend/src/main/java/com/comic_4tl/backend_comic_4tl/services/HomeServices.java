@@ -19,4 +19,34 @@ public class HomeServices {
         return mangaRespository.findTop4ByOrderByReleaseDayDesc();
     }
 
+    public List<Manga> getRecentRelease() {
+
+        return mangaRespository.findTop7RecentRelease();
+    }
+
+    // get all manga orderby desc
+
+    public List<Manga> getAllManga() {
+
+        return mangaRespository.findAllByOrderByReleaseDayDesc();
+    }
+
+    // get all manga orderby views
+
+    public List<Manga> getAllMangaOrderByViews() {
+
+        return mangaRespository.findAllByOrderByViewsDesc();
+    }
+
+    // get all manga orderby ratting
+
+    public List<Manga> getAllMangaOrderByRatting() {
+
+        return mangaRespository.findAllByOrderByRattingDesc();
+    }
+
+    public List<Manga> searchManga(String name) {
+        return mangaRespository.findByName(name);
+    }
+
 }
