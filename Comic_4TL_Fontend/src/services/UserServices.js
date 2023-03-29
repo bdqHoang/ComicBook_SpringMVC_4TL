@@ -8,12 +8,8 @@ class UserServices{
                 email,
                 password
             });
-            if(response.data.token){
+            if(response.data.token !=null){
                 localStorage.setItem('token', response.data.token);
-                api.interceptors.request.use(function(config) {
-                    config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
-                    return config;
-                });
             }
             return response.data;
         }catch(error){
@@ -24,8 +20,13 @@ class UserServices{
 
     // get infotmantion user
     async getUserInfo(){
-        const response = await api.get('/api/protected');
-        return response.data;
+        try {
+            const response = await api.get('/api/protected');
+            return response.data;
+        } catch (error) {
+            console.log(error);
+        }
+       
     }
 
     async logout(){

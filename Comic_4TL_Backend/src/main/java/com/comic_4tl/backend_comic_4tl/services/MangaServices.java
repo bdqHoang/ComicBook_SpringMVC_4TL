@@ -13,8 +13,9 @@ public class MangaServices {
     @Autowired
     private MangaRespository mangaRepository;
 
-    //get manga by ud
+    // get manga by ud
     public List<Manga> getMangaByMangaId(int id) {
         return mangaRepository.getMangaByMangaId(id);
     }
+
 }

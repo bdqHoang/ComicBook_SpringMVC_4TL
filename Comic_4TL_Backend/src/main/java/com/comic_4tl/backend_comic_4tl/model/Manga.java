@@ -31,7 +31,7 @@ public class Manga implements java.io.Serializable {
     @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "avatar")
-    private String avata;
+    private String avatar;
     @Column(name = "description")
     private String description;
     @Column(name = "ratting")

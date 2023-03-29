@@ -18,7 +18,8 @@ public interface MangaRespository extends JpaRepository<Manga, Integer> {
     @Query(value = "SELECT manga.* , Max(Chapter.release_day) as maxDay FROM manga join chapter ON manga.manga_id = chapter.manga_id Group by manga.manga_id ORDER BY maxDay DESC LIMIT 7", nativeQuery = true)
     List<Manga> findTop7RecentRelease();
 
-    List<Manga> findAllByOrderByReleaseDayDesc();
+    @Query(value = "SELECT * FROM manga ORDER BY release_day LIMIT ?1 , 12", nativeQuery = true)
+    List<Manga> findAllByOrderByReleaseDayDesc(int page);
 
     List<Manga> findAllByOrderByViewsDesc();
 

@@ -9,8 +9,23 @@ class HomeServices{
 
     // Get all comics recent release
     getRecentRelease(){
-        return api.get("/home/recent");
+        return api.get("/home/recent-release");
     }
+
+    //get page manga
+
+    getPageManga(){
+        return api.get(`/home/count-manga`);
+    }
+
+    //get all manga
+    getAllManga(page){
+        return api.get(`/home/all-manga?page=${page}`);
+    }
+
+    
+
+    
 
 
 }

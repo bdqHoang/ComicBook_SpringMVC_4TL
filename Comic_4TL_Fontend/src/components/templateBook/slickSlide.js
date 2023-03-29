@@ -20,7 +20,7 @@ const SlideSlick = (props) => {
                     <div className="trend-bottom-img
                         mb-30">
                         <img className="play"
-                            src={props.props.avata}
+                            src={props.props.avatar}
                             alt=""/>
                         <div className="overlay_play">
                             <i className="fa-solid
