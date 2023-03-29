@@ -1,5 +1,7 @@
-import React from "react";
+import React , {useEffect, useState} from "react";
 import SlideSlick from "../templateBook/slickSlide";
+import RecentRelease from "../templateBook/recentRelease";
+import HomeServices from "../../services/HomeServices";
 
 
 function NewSeason(props) {
@@ -7,7 +9,18 @@ function NewSeason(props) {
     let slickSlide = [];
     for (let i = 0; i < props.props.length; i++) {
         slickSlide.push(<SlideSlick props={props.props[i]}/>);
-    }   
+    }  
+
+    var home = new HomeServices();
+    let [data, setdata] = useState([]);
+    let recentRelease = [];
+    useEffect(() => {
+        home.getRecentRelease().then(function(res){
+            setdata(res.data);
+     })}, []);
+    for (let i = 0; i < data.length; i++) {
+        recentRelease.push(<RecentRelease props={data[i]}/>);
+    }
 
 
     return (
@@ -91,10 +104,7 @@ function NewSeason(props) {
                             <div className="section-tittle mb-30">
                                 <h3>RECENT RELEASE</h3>
                             </div>
-                            
-
-
-
+                            {recentRelease}
                         </div>
                     </div>
                 </div>

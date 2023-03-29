@@ -40,9 +40,9 @@ public class HomeController {
     }
 
     @GetMapping("/all-manga")
-    public List<Manga> getAllManga() {
-
-        return homeServices.getAllManga();
+    public List<Manga> getAllManga(int page) {
+        page = (page - 1) * 12;
+        return homeServices.getAllManga(page);
     }
 
     @GetMapping("/all-manga-order-by-views")
@@ -72,6 +72,11 @@ public class HomeController {
     public List<Manga> searchManga(String name) {
         System.out.println(name);
         return homeServices.searchManga(name);
+    }
+
+    @GetMapping("/count-manga")
+    public long getPageManga() {
+        return homeServices.getCountManga();
     }
 
     // @Autowired

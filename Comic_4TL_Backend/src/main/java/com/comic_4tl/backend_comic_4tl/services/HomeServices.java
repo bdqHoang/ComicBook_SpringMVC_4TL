@@ -26,9 +26,9 @@ public class HomeServices {
 
     // get all manga orderby desc
 
-    public List<Manga> getAllManga() {
+    public List<Manga> getAllManga(int page) {
 
-        return mangaRespository.findAllByOrderByReleaseDayDesc();
+        return mangaRespository.findAllByOrderByReleaseDayDesc(page);
     }
 
     // get all manga orderby views
@@ -47,6 +47,15 @@ public class HomeServices {
 
     public List<Manga> searchManga(String name) {
         return mangaRespository.findByName(name);
+    }
+
+    // page
+    public long getCountManga() {
+        long page = mangaRespository.count();
+        if (page % 12 == 0)
+            return page / 12;
+        else
+            return page / 12 + 1;
     }
 
 }

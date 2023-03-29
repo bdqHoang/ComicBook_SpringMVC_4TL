@@ -7,22 +7,22 @@ const RecentRelease = (props) => {
     
     var ratting;
 
-    ratting = helper.ratting(props.ratting);
+    ratting = helper.ratting(props.props.ratting);
     var genre;
 
-    genre = helper.genre(props.genre);
+    genre = helper.genre(props.props.genre);
     return(
         <>
         <a href="manga_single_page.html">
             <div className="trand-right-single d-flex">
                 <div className="trand-right-img">
-                    <img className="play" src={props.avatar} alt="" />
+                    <img className="play" style={{maxWidth:"120px", maxHeight:"120px"}} src={props.props.avatar} alt="" />
                     <div className="overlay_play2">
                         <i className="fa-solid fa-heart"> 61M</i>
                     </div>
                 </div>
                 <div className="trand-right-cap">
-                    <h4>{props.name}</h4>
+                    <h4>{props.props.name}</h4>
                     <ul className="d-flex flex-wrap star">
                        {ratting}
                     </ul>

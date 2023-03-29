@@ -1,5 +1,5 @@
 import React from "react";
-import Helper from "./helper/helper";
+import Helper from "../homeComponent/helper/helper";
 
 const Block = (props) => {
     let helper = new Helper();
@@ -22,11 +22,6 @@ const Block = (props) => {
         <div className="block2-txt text-center">
             <div className="block2-txt-child1"><a className="text-uppercase" href="manga_single_page.html">{props.name}</a>
                 <div className="star mb-2 d-flex flex-wrap justify-content-center">
-                    {/* <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star-half-stroke"></i> */}
                    {ratting}
                 </div>
                 <div className="tag3 d-flex flex-wrap">
