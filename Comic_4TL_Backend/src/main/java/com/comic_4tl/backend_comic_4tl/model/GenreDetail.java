@@ -28,8 +28,7 @@ public class GenreDetail {
     @ManyToOne
     @MapsId("manga_id")
     @JoinColumn(name = "manga_id")
-    @JsonBackReference
+    @JsonIgnoreProperties("listGenre")
     private Manga manga;
-
 
 }

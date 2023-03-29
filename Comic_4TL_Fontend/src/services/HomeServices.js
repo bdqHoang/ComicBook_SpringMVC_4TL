@@ -23,6 +23,12 @@ class HomeServices{
         return api.get(`/home/all-manga?page=${page}`);
     }
 
+    //get genre in home page
+
+    getHomeGenre(){
+        return api.get(`/home/top-genre`);
+    }
+
     
 
     

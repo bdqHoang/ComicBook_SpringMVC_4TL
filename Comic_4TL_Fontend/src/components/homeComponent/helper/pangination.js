@@ -11,21 +11,27 @@ export default function Pangination(props) {
     let getBlock=[];
 
     const [data, setData] = useState([]);
+    const [clicked, setClicked] = useState(false);
+    if(props.props === 1){ 
+        active = "active"
+    };
     const HandelPage = () => {
-        homeServices.getAllManga(props.props).then((res) => {
-            setData(res.data);
-        })
-        console.log(data);
+        setClicked(!clicked);
         for(var i in data){
-            getBlock.push(<Block props={i}/>); 
+            getBlock.push(<Block props={data[i]}/>); 
         }
         ReactDOM.createRoot(document.getElementById("getAllManga"))
         .render(<React.StrictMode>
                 {getBlock}
             </React.StrictMode>);
     }
+    useEffect(() => {
+        homeServices.getAllManga(props.props).then((res) => {
+            setData(res.data);
+        })
+    },[clicked]);
 
-    if(props.props === 1) active = "active";
+
     return(
         <a class={"nav-item nav-link " + active} id="nav-one-recently-tab" onClick={HandelPage}
             data-toggle="tab" href="#nav-one-recently" role="tab" aria-controls="nav-one-recently"
