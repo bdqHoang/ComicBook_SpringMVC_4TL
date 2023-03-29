@@ -14,4 +14,5 @@ public interface ChaptersRespository extends JpaRepository<Chapters, Integer> {
     // get chapter by chapter id
     @Query(value = "SELECT * FROM chapter WHERE chapter_id = ?1", nativeQuery = true)
     Chapters getChapterByChapterId(int id);
+    
 }
