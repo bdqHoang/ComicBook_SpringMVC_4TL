@@ -15,8 +15,6 @@ import com.comic_4tl.backend_comic_4tl.model.Manga;
 import com.comic_4tl.backend_comic_4tl.services.GenreServices;
 import com.comic_4tl.backend_comic_4tl.services.HomeServices;
 
-import jakarta.validation.Valid;
-
 @RestController
 @RequestMapping("/home")
 public class HomeController {

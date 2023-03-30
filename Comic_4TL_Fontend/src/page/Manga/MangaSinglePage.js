@@ -13,7 +13,7 @@ export default function MangaSignlePage() {
             setManga(res.data);
         })
     },[])
-    console.log(localStorage.getItem('token'));
+    console.log(manga);
     return (
         <>
 <section id="breadcrumb">

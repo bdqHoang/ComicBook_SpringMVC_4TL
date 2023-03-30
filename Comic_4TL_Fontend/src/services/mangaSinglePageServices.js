@@ -3,8 +3,8 @@ import api from "./api";
 export default class MangaSinglePageServices{
 
     // detail manga
-    getManga(Id){
-        return api.get(`/manga/getmanga-mangaid?${Id}`);
+    getManga(id){
+        return api.get(`/manga/getmanga-mangaid?id=${id}`);
     }
     // Get all chapters by manga id
     getChapterManga(Id){
