@@ -5,15 +5,16 @@ import Footer from './components/footer/footer';
 import Index from './page/Home';
 import Login from './page/User/Login';
 import Profile from './page/User/Profile';
-// import Genre from './page/Genre';
-// import Blog from './page/Blog/Blog';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignIn from './page/User/Register';
+import Genre from './page/Genre/Genre'
+import LastedManga from './components/homeComponent/lastedManga';
+import MangaSignlePage from './page/Manga/MangaSinglePage';
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter> 
       <Routes>
         <Route>
           <Route path={"/home"} Index element={
@@ -43,6 +44,22 @@ function App() {
           <Route  path='/profile' element={<div className='App'>
                 <Header></Header>
                 <Profile></Profile>
+                <Footer></Footer>
+          </div>}/>
+
+          <Route path='/genre' element={<div className='App'>
+                <Header></Header>
+                <Genre/>
+                <Footer></Footer>
+          </div>}/>
+          <Route path='/laster-manga' element={<div className='App'>
+                <Header></Header>
+                <LastedManga/>
+                <Footer></Footer>
+          </div>}/>
+          <Route path='/getmanga' element={<div className='App'>
+                <Header></Header>
+                <MangaSignlePage/>
                 <Footer></Footer>
           </div>}/>
         </Route>

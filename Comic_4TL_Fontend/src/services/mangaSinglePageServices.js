@@ -1,15 +1,14 @@
 import api from "./api";
 
-class MangaSinglePageServices{
+export default class MangaSinglePageServices{
 
+    // detail manga
+    getManga(Id){
+        return api.get(`/manga/getmanga-mangaid?${Id}`);
+    }
     // Get all chapters by manga id
     getChapterManga(Id){
         return api.get("/chapter/getChapters-MangaId?${Id}");
-    }
-
-    // Get all chapters by manga id
-    getManga(Id){
-        return api.get("/manga/getmanga-mangaid?${Id}");
     }
 
     // Get feedback by manga id

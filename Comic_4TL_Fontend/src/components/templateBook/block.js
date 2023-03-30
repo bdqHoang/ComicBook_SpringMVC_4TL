@@ -17,10 +17,10 @@ const Block = (props) => {
         <div className="block2-pic hov-img0"><img src={props.props.avatar} alt="IMG-PRODUCT" />
             <div className="overlay_play1"><i className="fa-solid fa-heart">{props.props.views}</i></div>
             {/* <div className="overlay_play1"><i className="fa-solid fa-heart">35M</i></div> */}
-            <a href="manga_single_page.html" className="block2-btn"><i className="fa-solid fa-eye"></i></a>
+            <a href={"/getmanga?id=" + props.props.mangaId} className="block2-btn"><i className="fa-solid fa-eye"></i></a>
         </div>
         <div className="block2-txt text-center">
-            <div className="block2-txt-child1"><a className="text-uppercase" href="manga_single_page.html">{props.props.name}</a>
+            <div className="block2-txt-child1"><a className="text-uppercase" href={"/getmanga?id=" + props.props.mangaId}>{props.props.name}</a>
                 <div className="star mb-2 d-flex flex-wrap justify-content-center">
                    {ratting}
                 </div>

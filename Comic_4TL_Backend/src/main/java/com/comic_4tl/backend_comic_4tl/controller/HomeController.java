@@ -18,7 +18,6 @@ import com.comic_4tl.backend_comic_4tl.services.HomeServices;
 import jakarta.validation.Valid;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/home")
 public class HomeController {
     @Autowired
