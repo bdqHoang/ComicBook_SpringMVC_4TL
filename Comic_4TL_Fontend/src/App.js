@@ -9,7 +9,8 @@ import Profile from "./page/User/Profile";
 // import Blog from './page/Blog/Blog';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignIn from "./page/User/Register";
-import MangaSinglePage from "./page/Manga/MangaSinglePage";
+import MangaSinglePage from "./page/manga-single-page/MangaSinglePage";
+import Chapter from "./page/Manga/Chappter/Chappter";
 
 function App() {
   return (
@@ -76,7 +77,17 @@ function App() {
             element={
               <div className="App">
                 <Header></Header>
-                <MangaSinglePage></MangaSinglePage>
+                <MangaSinglePage />
+                <Footer></Footer>
+              </div>
+            }
+          />
+          <Route
+            path="/Chapter"
+            element={
+              <div className="App">
+                <Header></Header>
+                <Chapter />
                 <Footer></Footer>
               </div>
             }

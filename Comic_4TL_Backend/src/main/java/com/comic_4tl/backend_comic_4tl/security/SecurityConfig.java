@@ -58,7 +58,7 @@ public class SecurityConfig {
         http.cors().and().csrf().disable()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .authorizeRequests().requestMatchers("/api/login", "/api/register", "/home/**")
+                .authorizeRequests().requestMatchers("/api/login", "/api/register", "/home/**", "/chapter/**", "/manga/**", "/user/**", "/imagechapter/**", "/feedback/**")
                 .permitAll()
                 .anyRequest().authenticated();
 

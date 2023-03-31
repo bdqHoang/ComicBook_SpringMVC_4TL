@@ -3,6 +3,7 @@ import NewSeason from "../../components/homeComponent/newSeason";
 import HomeServices from "../../services/HomeServices";
 import LastedManga from "../../components/homeComponent/lastedManga";
 
+
 function Index(props) {
    
 
