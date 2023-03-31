@@ -10,7 +10,7 @@ const RecentRelease = (props) => {
     ratting = helper.ratting(props.props.ratting);
     var genre;
 
-    genre = helper.genre(props.props.genre);
+    genre = helper.genre(props.props.listGenre);
     return(
         <>
         <a href="manga_single_page.html">

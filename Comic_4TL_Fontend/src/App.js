@@ -1,20 +1,21 @@
-import React from "react";
-import "./App.css";
-import Header from "./components/header/header";
-import Footer from "./components/footer/footer";
-import Index from "./page/Home";
-import Login from "./page/User/Login";
-import Profile from "./page/User/Profile";
-// import Genre from './page/Genre';
-// import Blog from './page/Blog/Blog';
+import React from 'react';
+import './App.css';
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
+import Index from './page/Home';
+import Login from './page/User/Login';
+import Profile from './page/User/Profile';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignIn from "./page/User/Register";
-import MangaSinglePage from "./page/manga-single-page/MangaSinglePage";
-import Chapter from "./page/Manga/Chappter/Chappter";
+import SignIn from './page/User/Register';
+import Genre from './page/Genre/Genre'
+import LastedManga from './components/homeComponent/lastedManga';
+import MangaSignlePage from './page/Manga/MangaSinglePage';
+import Chapter from './page/Manga/Chapter';
+
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter> 
       <Routes>
         <Route>
           <Route
@@ -77,7 +78,7 @@ function App() {
             element={
               <div className="App">
                 <Header></Header>
-                <MangaSinglePage />
+                <MangaSignlePage />
                 <Footer></Footer>
               </div>
             }
@@ -92,6 +93,22 @@ function App() {
               </div>
             }
           />
+
+          <Route path='/genre' element={<div className='App'>
+                <Header></Header>
+                <Genre/>
+                <Footer></Footer>
+          </div>}/>
+          <Route path='/laster-manga' element={<div className='App'>
+                <Header></Header>
+                <LastedManga/>
+                <Footer></Footer>
+          </div>}/>
+          <Route path='/getmanga' element={<div className='App'>
+                <Header></Header>
+                <MangaSignlePage/>
+                <Footer></Footer>
+          </div>}/>
         </Route>
       </Routes>
     </BrowserRouter>

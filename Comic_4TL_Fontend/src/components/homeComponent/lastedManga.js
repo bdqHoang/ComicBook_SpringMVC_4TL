@@ -2,16 +2,19 @@ import React, {useState, useEffect} from "react";
 import Block from "../templateBook/block";
 import Pangination from "./helper/pangination";
 import HomeServices from "../../services/HomeServices";
-import ReactDOM from 'react-dom/client';
 
 
 
-export default function LastedManga(props) {
+export default function LastedManga() {
     const [data, setData] = useState([]);
+    const [dataManga, setDataManga] = useState([]);
     var homeServices = new HomeServices();
     useEffect(() => {
         homeServices.getPageManga().then((res) => {
             setData(res.data);
+        })
+        homeServices.getAllManga(1).then((res) => {
+            setDataManga(res.data);
         })
     }, [])
 
@@ -19,6 +22,13 @@ export default function LastedManga(props) {
     for (var i = 1; i <= data; i++) {
         pangination.push(<Pangination props={i}/>);
     }
+
+    let getBlock = [];
+    for (var i in dataManga) {
+        getBlock.push(<Block props={dataManga[i]}/>);
+    }
+
+
     
     return (
         <>
@@ -60,9 +70,7 @@ export default function LastedManga(props) {
                                                             <div class="tab-pane fade show active" id="nav-one-recently" role="tabpanel"
                                                                 aria-labelledby="nav-one-recently-tab">
                                                                 <div class="row" id="getAllManga">
-                                                                    <Block/>
-
-
+                                                                    {getBlock}
                                                                 </div>
                                                             </div>
                                                         </div>
