@@ -24,4 +24,11 @@ public class GenreServices {
         return genreRespository.getGenreLimit4();
     }
 
+    public List<Genre> getGenreByMangaIdAndGenreId(int mangaId, List<Integer> genreId) {
+
+        return genreRespository.getGenreByMangaIdAndGenreId(mangaId, genreId);
+    }
+
+
+
 }

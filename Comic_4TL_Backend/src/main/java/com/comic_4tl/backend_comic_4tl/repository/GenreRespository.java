@@ -12,4 +12,6 @@ public interface GenreRespository extends JpaRepository<Genre, Integer> {
     @Query(value = "Select * from genre limit 4", nativeQuery = true)
     List<Genre> getGenreLimit4();
 
+    @Query(value = "Select * from genreDetail where manga_id = ?1 and genre_id in ?2 limit 4", nativeQuery = true)
+    List<Genre> getGenreByMangaIdAndGenreId(int mangaId, List<Integer> genreId);
 }
