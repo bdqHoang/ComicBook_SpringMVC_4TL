@@ -73,7 +73,7 @@ function App() {
             }
           />
 
-          <Route
+          {/* <Route
             path="/manga-single"
             element={
               <div className="App">
@@ -92,7 +92,7 @@ function App() {
                 <Footer></Footer>
               </div>
             }
-          />
+          /> */}
 
           <Route path='/genre' element={<div className='App'>
                 <Header></Header>
