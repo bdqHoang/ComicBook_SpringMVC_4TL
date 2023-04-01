@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import MangaSinglePageServices from "../../services/mangaSinglePageServices";
+import ListChappter from "./ListChapter";
 
 export default function MangaSignlePage() {
   const { search } = useLocation();
@@ -8,31 +9,58 @@ export default function MangaSignlePage() {
   const [manga, setManga] = useState([]);
   let mangaSinglePageServices = new MangaSinglePageServices();
 
-  useEffect(() => {
-    mangaSinglePageServices.getManga(id).then((res) => {
-      setManga(res.data);
-    });
-  }, []);
-  console.log(manga);
-  return (
-    <>
-      <section id="breadcrumb">
-        <div className="container">
-          <div className="row">
+    useEffect(()=>{
+        mangaSinglePageServices.getManga(id).then((res)=>{
+            setManga(res.data);
+        })
+    },[])
+
+    //get genre
+    let listGenre, listGenreId = [];
+    var check = ", ";
+    for(var i in manga.listGenre){
+        if(i !=0)
+         listGenre.push(<a href="/genre">{check + manga.listGenre[i].genre.name}</a>);
+        else
+        listGenre.push(<a href="/genre">{manga.listGenre[i].genre.name}</a>);
+
+        listGenreId.push(manga.listGenre[i].genreId)
+    }
+
+    
+
+    //get description
+
+    var des,readmore;
+    des = manga.description;
+    if(manga.description != null){
+        if(manga.description.length > 200){
+            des = manga.description.slice(0,200);
+            readmore = manga.description.slice(200,manga.description.length);
+        }
+    }
+
+
+    //get chappter manga
+    let listChapter = [];
+    for(var i in manga.chapters){
+        listChapter.push(<ListChappter props = {manga.chapters[i]}/>)
+    }
+
+
+    return (
+        <>
+<section id="breadcrumb">
+    <div className="container">
+        <div className="row">
             <div className="col-lg-12">
-              <nav aria-label="breadcrumb">
-                <ol className="breadcrumb">
-                  <li className="breadcrumb-item">
-                    <a href="index.html">Home</a>
-                  </li>
-                  <li className="breadcrumb-item">
-                    <a href="manga_all.html">All Mangas</a>
-                  </li>
-                  <li className="breadcrumb-item active" aria-current="page">
-                    The Boy in the All-Girls School{" "}
-                  </li>
-                </ol>
-              </nav>
+                <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li className="breadcrumb-item"><a href="manga_all.html">All Mangas</a></li>
+                        <li className="breadcrumb-item active" aria-current="page">The Boy in the All-Girls School </li>
+                    </ol>
+                </nav>
             </div>
           </div>
         </div>
@@ -42,74 +70,51 @@ export default function MangaSignlePage() {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              <div className="manga_name text-start">
-                <h2>The Boy in the All-Girls School</h2>
-              </div>
+                <div className="manga_name text-start">
+                    <h2>The Boy in the All-Girls School</h2>
+                </div>
             </div>
           </div>
           <div className="row">
             <div className="col-lg-3">
-              <img
-                className="w-100 img-fluid"
-                src="https://yae.hifive03.com/assets/img/manga_single/single1.jpg"
-                alt=""
-              />
+                <img className="w-100 img-fluid" src={manga.avatar}
+                    alt="" />
             </div>
             <div className="col-lg-6">
-              <form className="form-1 mb-3 mt-3">
-                <div className="form-field">
-                  <select id="glsr-ltr" className="star-rating">
-                    <option value="">Select a rating</option>
-                    <option value="5">5</option>
-                    <option value="4" selected="">
-                      4
-                    </option>
-                    <option value="3">3</option>
-                    <option value="2">2</option>
-                    <option value="1">1</option>
-                  </select>
+                <form className="form-1 mb-3 mt-3">
+                    <div className="form-field">
+                        <select id="glsr-ltr" className="star-rating">
+                            <option value="">Select a rating</option>
+                            <option value="5">5</option>
+                            <option value="4" selected="">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                </form>
+                <div className="manga_info">
+                    <ul>
+                        <li className="d-flex flex-wrap">
+                            <h6>Rating</h6>
+                            <p>Average {manga.ratting} / 5</p>
+                        </li>
+                        <li className="d-flex flex-wrap">
+                            <h6>Rank </h6>
+                            <p>N/A, it has {manga.views} views </p>
+                        </li>
+                        <li className="d-flex flex-wrap">
+                            <h6>Genre(s) </h6>
+                            <p>
+                                {listGenre}
+                            </p>
+                        </li>
+                        <li className="d-flex flex-wrap watch">
+                            <a className="mr-2" href="chapter/chapter.html">Read First</a><a
+                                href="chapter/chapter06.html">Read Last</a>
+                        </li>
+                    </ul>
                 </div>
-              </form>
-              <div className="manga_info">
-                <ul>
-                  <li className="d-flex flex-wrap">
-                    <h6>Rating</h6>
-                    <p>Average 4 / 5 out of 87</p>
-                  </li>
-                  <li className="d-flex flex-wrap">
-                    <h6>Rank </h6>
-                    <p>N/A, it has 333.4K views </p>
-                  </li>
-                  <li className="d-flex flex-wrap">
-                    <h6>Alternative </h6>
-                    <p>
-                      女子学院的男生 ; Boy in A Girls' School ; Nuzi Xueyuan de
-                      Nansheng
-                    </p>
-                  </li>
-                  <li className="d-flex flex-wrap">
-                    <h6>Genre(s) </h6>
-                    <p>
-                      <a href="genres.html">Comedy</a>,
-                      <a href="genres.html">Harem</a>,
-                      <a href="genres.html">Romance</a>,
-                      <a href="genres.html">School life</a>,
-                      <a href="genres.html">Shounen</a>,
-                      <a href="genres.html">Slice of life</a>
-                    </p>
-                  </li>
-                  <li className="d-flex flex-wrap">
-                    <h6>Type </h6>
-                    <p>Author(s) Chu dao manhua </p>
-                  </li>
-                  <li className="d-flex flex-wrap watch">
-                    <a className="mr-2" href="chapter/chapter.html">
-                      Read First
-                    </a>
-                    <a href="chapter/chapter06.html">Read Last</a>
-                  </li>
-                </ul>
-              </div>
             </div>
             <div className="col-lg-3">
               <div className="manga_info">
@@ -138,313 +143,164 @@ export default function MangaSignlePage() {
           </div>
           <div className="row">
             <div className="col-lg-8">
-              <div className="section-tittle mt-30 mb-30">
-                <h3>Summary</h3>
-              </div>
-              <div className="manga_info">
-                <p>
-                  In an all-girls school full of jaw-dropping beauties, a male
-                  student suddenly transfers in!!! Perhaps in the eyes of
-                  others, this would be a dream-like paradise, but in reality,
-                  the future is completely unimaginable{" "}
-                  <span id="dots">...</span>
-                  <span id="more">
-                    erisque enim ligula venenatis dolor. Maecenas nisl est,
-                    ultrices nec congue eget, auctor vitae massa. Fusce luctus
-                    vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed
-                    ullamcorper ipsum dignissim ac. In at libero sed nunc
-                    venenatis imperdiet sed ornare turpis. Donec vitae dui eget
-                    tellus gravida venenatis. Integer fringilla congue eros non
-                    fermentum. Sed dapibus pulvinar nibh tempor porta.
-                  </span>
-                </p>
-                <button
-                  onclick="if (!window.__cfRLUnblockHandlers)
-                                return false; myFunction()"
-                  id="read_more"
-                  data-cf-modified-6c234f31212b61c935b6d039-=""
-                >
-                  Read more
-                </button>
-                {/* <script type="6c234f31212b61c935b6d039-text/javascript">
-                        function myFunction() {
+                <div className="section-tittle mt-30 mb-30">
+                    <h3>Summary</h3>
+                </div>
+                <div className="manga_info">
+                    <p>{des}<span id="dots">...</span><span id="more">
+                        {readmore}
+                        .</span></p>
+                    <button id="read_more"data-cf-modified-6c234f31212b61c935b6d039-=""
+                        onClick={()=>{
                             var dots = document.getElementById("dots");
                             var moreText = document.getElementById("more");
                             var btnText = document.getElementById("read_more");
+                        
                             if (dots.style.display === "none") {
                                 dots.style.display = "inline";
-                                btnText.innerHTML = "Read more";
+                                btnText.innerHTML = "Read more"; 
                                 moreText.style.display = "none";
                             } else {
                                 dots.style.display = "none";
-                                btnText.innerHTML = "Read less";
+                                btnText.innerHTML = "Read less"; 
                                 moreText.style.display = "inline";
                             }
-                        }
-                    </script> */}
-              </div>
-              <div className="manga_info">
-                <div className="section-tittle mt-30 mb-30">
-                  <h3>LATEST MANGA RELEASES</h3>
+                        }}
+                    >Read more</button>
+                    
                 </div>
-                <ul className="chapter mb-3">
-                  <li>
-                    <a
-                      href="chapter/chapter.html"
-                      className="d-flex flex-wrap
-                                        justify-content-between"
-                    >
-                      <span>Chapter 00</span>
-                      <span>07/19/2020</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="chapter/chapter01.html"
-                      className="d-flex flex-wrap
-                                        justify-content-between"
-                    >
-                      <span>Chapter 1 - The Beginning of Everything </span>
-                      <span>07/19/2020</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="chapter/chapter02.html"
-                      className="d-flex flex-wrap
-                                        justify-content-between"
-                    >
-                      <span>Chapter 2 - Friends and Relatives</span>
-                      <span>07/19/2020 </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="chapter/chapter03.html"
-                      className="d-flex flex-wrap
-                                        justify-content-between"
-                    >
-                      <span>
-                        Chapter 3 - First Visit to the All-Girls School{" "}
-                      </span>
-                      <span>07/19/2020</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="chapter/chapter04.html"
-                      className="d-flex flex-wrap
-                                        justify-content-between"
-                    >
-                      <span>Chapter 4 - A Surprise While Out Strolling </span>
-                      <span>07/19/2020</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="chapter/chapter05.html"
-                      className="d-flex flex-wrap
-                                        justify-content-between"
-                    >
-                      <span>Chapter 5 - Appropriate Countermeasures </span>
-                      <span>07/19/2020</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="chapter/chapter06.html"
-                      className="d-flex flex-wrap
-                                        justify-content-between"
-                    >
-                      <span>Chapter 6 - First Day of School</span>
-                      <span>07/19/2020 </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+                <div className="manga_info">
+                    <div className="section-tittle mt-30 mb-30">
+                        <h3>LATEST MANGA RELEASES</h3>
+                    </div>
+                    <ul className="chapter mb-3">
+                       {listChapter}
+                    </ul>
+                </div>
             </div>
             <div className="col-lg-4">
-              <div className="section-tittle mb-30 mt-30">
-                <h3>Related Manga</h3>
-              </div>
-              <a href="#">
-                <div className="trand-right-single d-flex">
-                  <div className="trand-right-img">
-                    <img
-                      className="play"
-                      src="assets/img/manga/small8.jpg"
-                      alt=""
-                    />
-                    <div className="overlay_play2">
-                      <i className="fa-solid fa-heart"> 61M</i>
-                    </div>
-                  </div>
-                  <div className="trand-right-cap">
-                    <h4>My Aunt </h4>
-                    <ul className="d-flex flex-wrap star">
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                      <li>
-                        <i className="fa-regular fa-star"></i>
-                      </li>
-                      <li>
-                        <i className="fa-regular fa-star"></i>
-                      </li>
-                    </ul>
-                    <div className="tag2 d-flex flex-wrap">
-                      <h6>Genre:</h6>
-                      <ul className="d-flex flex-wrap">
-                        <li>Action,</li>
-                        <li>Comedy,</li>
-                        <li>Drama,</li>
-                        <li>Supernatural</li>
-                      </ul>
-                    </div>
-                  </div>
+                <div className="section-tittle mb-30 mt-30">
+                    <h3>Related Manga</h3>
                 </div>
-              </a>
-              <a href="#">
-                <div className="trand-right-single d-flex">
-                  <div className="trand-right-img">
-                    <img
-                      className="play"
-                      src="assets/img/manga/small9.jpg"
-                      alt=""
-                    />
-                    <div className="overlay_play2">
-                      <i className="fa-solid fa-heart"> 89M</i>
+                <a href="#">
+                    <div className="trand-right-single d-flex">
+                        <div className="trand-right-img">
+                            <img className="play" src="assets/img/manga/small8.jpg" alt="" />
+                            <div className="overlay_play2">
+                                <i className="fa-solid fa-heart"> 61M</i>
+                            </div>
+                        </div>
+                        <div className="trand-right-cap">
+                            <h4>My Aunt </h4>
+                            <ul className="d-flex flex-wrap star">
+                                <li><i className="fa-solid fa-star"></i></li>
+                                <li><i className="fa-solid fa-star"></i></li>
+                                <li><i className="fa-solid fa-star"></i></li>
+                                <li><i className="fa-regular fa-star"></i></li>
+                                <li><i className="fa-regular fa-star"></i></li>
+                            </ul>
+                            <div className="tag2 d-flex flex-wrap">
+                                <h6>Genre:</h6>
+                                <ul className="d-flex flex-wrap">
+                                    <li>Action,</li>
+                                    <li>Comedy,</li>
+                                    <li>Drama,</li>
+                                    <li>Supernatural</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div className="trand-right-cap">
-                    <h4>Son-in-Law Does Cheap Cultivation </h4>
-                    <ul className="d-flex flex-wrap star">
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                      <li>
-                        <i
-                          className="fa-solid
-                                                fa-star-half-stroke"
-                        ></i>
-                      </li>
-                    </ul>
-                    <div className="tag2 d-flex flex-wrap">
-                      <h6>Genre:</h6>
-                      <ul className="d-flex flex-wrap">
-                        <li>Action,</li>
-                        <li>Comedy,</li>
-                        <li>Drama,</li>
-                        <li>Supernatural</li>
-                      </ul>
+                </a>
+                <a href="#">
+                    <div className="trand-right-single d-flex">
+                        <div className="trand-right-img">
+                            <img className="play" src="assets/img/manga/small9.jpg" alt="" />
+                            <div className="overlay_play2">
+                                <i className="fa-solid fa-heart"> 89M</i>
+                            </div>
+                        </div>
+                        <div className="trand-right-cap">
+                            <h4>Son-in-Law Does Cheap Cultivation </h4>
+                            <ul className="d-flex flex-wrap star">
+                                <li><i className="fa-solid fa-star"></i></li>
+                                <li><i className="fa-solid fa-star"></i></li>
+                                <li><i className="fa-solid fa-star"></i></li>
+                                <li><i className="fa-solid fa-star"></i></li>
+                                <li><i className="fa-solid
+                                                fa-star-half-stroke"></i></li>
+                            </ul>
+                            <div className="tag2 d-flex flex-wrap">
+                                <h6>Genre:</h6>
+                                <ul className="d-flex flex-wrap">
+                                    <li>Action,</li>
+                                    <li>Comedy,</li>
+                                    <li>Drama,</li>
+                                    <li>Supernatural</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div className="trand-right-single d-flex">
-                  <div className="trand-right-img">
-                    <img
-                      className="play"
-                      src="assets/img/manga/small10.jpg"
-                      alt=""
-                    />
-                    <div className="overlay_play2">
-                      <i className="fa-solid fa-heart"> 99M</i>
+                </a>
+                <a href="#">
+                    <div className="trand-right-single d-flex">
+                        <div className="trand-right-img">
+                            <img className="play" src="assets/img/manga/small10.jpg" alt="" />
+                            <div className="overlay_play2">
+                                <i className="fa-solid fa-heart"> 99M</i>
+                            </div>
+                        </div>
+                        <div className="trand-right-cap">
+                            <h4>Gedou Tenisha no Harem Dungeon Seisakuki
+                            </h4>
+                            <ul className="d-flex flex-wrap star">
+                                <li><i className="fa-solid fa-star"></i></li>
+                                <li><i className="fa-solid fa-star"></i></li>
+                                <li><i className="fa-solid fa-star"></i></li>
+                                <li><i className="fa-solid
+                                                fa-star-half-stroke"></i></li>
+                                <li><i className="fa-regular fa-star"></i></li>
+                            </ul>
+                            <div className="tag2 d-flex flex-wrap">
+                                <h6>Genre:</h6>
+                                <ul className="d-flex flex-wrap">
+                                    <li>Action,</li>
+                                    <li>Comedy,</li>
+                                    <li>Drama,</li>
+                                    <li>Supernatural</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div className="trand-right-cap">
-                    <h4>Gedou Tenisha no Harem Dungeon Seisakuki</h4>
-                    <ul className="d-flex flex-wrap star">
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                      <li>
-                        <i
-                          className="fa-solid
-                                                fa-star-half-stroke"
-                        ></i>
-                      </li>
-                      <li>
-                        <i className="fa-regular fa-star"></i>
-                      </li>
-                    </ul>
-                    <div className="tag2 d-flex flex-wrap">
-                      <h6>Genre:</h6>
-                      <ul className="d-flex flex-wrap">
-                        <li>Action,</li>
-                        <li>Comedy,</li>
-                        <li>Drama,</li>
-                        <li>Supernatural</li>
-                      </ul>
+                </a>
+                <a href="#">
+                    <div className="trand-right-single d-flex">
+                        <div className="trand-right-img">
+                            <img className="play" src="assets/img/manga/small11.jpg" alt="" />
+                            <div className="overlay_play2">
+                                <i className="fa-solid fa-heart"> 61M</i>
+                            </div>
+                        </div>
+                        <div className="trand-right-cap">
+                            <h4>Kanojo, Okarishimasu </h4>
+                            <ul className="d-flex flex-wrap star">
+                                <li><i className="fa-solid fa-star"></i></li>
+                                <li><i className="fa-solid fa-star"></i></li>
+                                <li><i className="fa-solid fa-star"></i></li>
+                                <li><i className="fa-solid fa-star"></i></li>
+                                <li><i className="fa-solid fa-star"></i></li>
+                            </ul>
+                            <div className="tag2 d-flex flex-wrap">
+                                <h6>Genre:</h6>
+                                <ul className="d-flex flex-wrap">
+                                    <li>Action,</li>
+                                    <li>Comedy,</li>
+                                    <li>Drama,</li>
+                                    <li>Supernatural</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div className="trand-right-single d-flex">
-                  <div className="trand-right-img">
-                    <img
-                      className="play"
-                      src="assets/img/manga/small11.jpg"
-                      alt=""
-                    />
-                    <div className="overlay_play2">
-                      <i className="fa-solid fa-heart"> 61M</i>
-                    </div>
-                  </div>
-                  <div className="trand-right-cap">
-                    <h4>Kanojo, Okarishimasu </h4>
-                    <ul className="d-flex flex-wrap star">
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                      <li>
-                        <i className="fa-solid fa-star"></i>
-                      </li>
-                    </ul>
-                    <div className="tag2 d-flex flex-wrap">
-                      <h6>Genre:</h6>
-                      <ul className="d-flex flex-wrap">
-                        <li>Action,</li>
-                        <li>Comedy,</li>
-                        <li>Drama,</li>
-                        <li>Supernatural</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </a>
+                </a>
             </div>
           </div>
         </div>
