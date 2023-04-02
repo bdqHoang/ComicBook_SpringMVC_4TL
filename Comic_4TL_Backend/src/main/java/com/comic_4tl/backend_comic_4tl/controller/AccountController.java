@@ -46,4 +46,10 @@ public class AccountController {
         var user = userDetails.getUser();
         return ResponseEntity.ok(user);
     }
+
+    @GetMapping("/get-forgot-password")
+    public String getForgotPassword(@RequestParam String email) {
+        var response = userServices.getForgotPassword(email);
+        return response;
+    }
 }

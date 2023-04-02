@@ -6,6 +6,7 @@ import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -26,11 +27,11 @@ public class Feedback {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private int feedback_id;
-    @Column(name = "repplyId", nullable = false)
-    private int repply_id;
+    @Column(name = "repply_id")
+    private int repplyId;
     @Column(name = "comment", nullable = false)
     private String comment;
-    @Column(name = "createAt", nullable = false)
+    @Column(name = "create_at", nullable = false)
     private Date create_at;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -40,7 +41,7 @@ public class Feedback {
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
-    @JsonBackReference
+    @JsonIgnoreProperties({ "feedback", "hibernateLazyInitializer", "handler" })
     private User users;
 
 }

@@ -64,4 +64,9 @@ public class Manga implements java.io.Serializable {
     @JsonManagedReference
     private List<Chapters> chapters = new ArrayList();
 
+    @OneToMany(mappedBy = "manga", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+    @JsonManagedReference
+    private List<Feedback> feedBacks = new ArrayList();
+
 }
