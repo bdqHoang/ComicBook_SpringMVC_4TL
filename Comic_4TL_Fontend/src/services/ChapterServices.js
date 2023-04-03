@@ -1,6 +1,9 @@
 import api from "./api";
 
-class ChapterServices{
-    // Get all chapters by manga id
+export default class ChapterServices{
     
+    //get chapter by manga id
+    getChapter_MangaId(id){
+        return api.get(`/chapter/getChapters-MangaId?id=${id}`);
+    }
 }

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import ChapterServices from "../../services/chapterServices";
-import ListChappter from "../../page/Manga/ListChapter";
+import ChapterServices from "../../services/ChapterServices";
 import ChapterImangeServices from "../../services/ChapterImageServices";
+import ListChappter from "../templateBook/listChapterTemplate";
 import Imagetemplate from "../templateBook/imageTemplate";
 
 export default function ChapterImage(props) {
@@ -14,7 +14,7 @@ export default function ChapterImage(props) {
   let ChapterImageServices = new ChapterImangeServices();
 
   useEffect(() => {
-    chapterServices.getChapter(id).then((res) => {
+    chapterServices.getChapter_MangaId(id).then((res) => {
       setChapter(res.data);
     });
 
@@ -27,6 +27,11 @@ export default function ChapterImage(props) {
   let listChapterImage = [];
   for (var i in chapterImage) {
     listChapterImage.push(<Imagetemplate props={chapterImage[i]} />);
+  }
+
+  let listChapter = [];
+  for (var b in chapter) {
+    listChapter.push(<ListChappter props={chapter[b]} />);
   }
   return (
     <>
@@ -69,10 +74,7 @@ export default function ChapterImage(props) {
               </div>
             </div>
             <div class="col-lg-6">
-              <div
-                class="feedback_box d-flex flex-wrap
-                            justify-content-end"
-              >
+              <div class="feedback_box d-flex flex-wrap justify-content-end">
                 <a
                   class="Bookmark"
                   data-toggle="tooltip"
@@ -90,32 +92,10 @@ export default function ChapterImage(props) {
               <select
                 class="form-select form-select-sm"
                 aria-label=".form-select-sm example"
-                onchange="if
-                            (!window.__cfRLUnblockHandlers) return false;
-                            javascript:handleSelect(this)"
+                onchange="if (!window.__cfRLUnblockHandlers) return false; javascript:handleSelect(this)"
                 data-cf-modified-60063e96678437510989fb24-=""
               >
-                <option selected disabled>
-                  Chapter 00
-                </option>
-                <option value="../chapter/chapter01">
-                  Chapter 1 - The Beginning of Everything{" "}
-                </option>
-                <option value="../chapter/chapter02">
-                  Chapter 2 - Friends and Relatives{" "}
-                </option>
-                <option value="../chapter/chapter03">
-                  Chapter 3 - First Visit to the All-Girls School{" "}
-                </option>
-                <option value="../chapter/chapter04">
-                  Chapter 4 - A Surprise While Out Strolling{" "}
-                </option>
-                <option value="../chapter/chapter05">
-                  Chapter 5 - Appropriate Countermeasures{" "}
-                </option>
-                <option value="../chapter/chapter06">
-                  Chapter 6 - First Day of School{" "}
-                </option>
+                {listChapter}
               </select>
               {/* <script type="60063e96678437510989fb24-text/javascript">
                         function handleSelect(elm) {

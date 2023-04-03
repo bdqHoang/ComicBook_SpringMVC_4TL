@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import chapterServices from "../../services/chapterServices";
+import chapterServices from "../../services/chapterService";
 import ListChappter from "../../page/Manga/ListChapter";
 
 export default function ListChapter(props) {

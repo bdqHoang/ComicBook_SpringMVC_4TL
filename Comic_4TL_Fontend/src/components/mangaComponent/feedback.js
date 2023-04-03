@@ -1,61 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import MangaSinglePageServices from "../../services/mangaSinglePageServices";
-import ListChappter from "../../page/Manga/ListChapter";
 import FeedbackTemplate from "../../components/templateBook/feedbackTemplate";
 import FeedbackServices from "../../services/FeedbackServices";
 
 export default function Feedback(props) {
-    const { search } = useLocation();
+  const { search } = useLocation();
   let id = new URLSearchParams(search).get("id");
-  const [manga, setManga] = useState([]);
-  const [feedback, setFeedback] = useState([]);
+  const [feedback, setFeedback] = useState();
   let [Countfeedback, setCountfeedback] = useState(0);
-  let mangaSinglePageServices = new MangaSinglePageServices();
+
   let feedbackServices = new FeedbackServices();
 
   useEffect(() => {
-    mangaSinglePageServices.getManga(id).then((res) => {
-      setManga(res.data);
-    });
-    mangaSinglePageServices.countFeedback_MangaId(id).then((res) => {
-      setCountfeedback(res.data);
-    });
-    feedbackServices.getFeedback_MangaId(id).then((res) => {
-      setFeedback(res.data);
-    });
+    const countFeedback = async () => {
+      feedbackServices.countFeedback_MangaId(id).then((res) => {
+        setCountfeedback(res.data);
+      });
+    };
+
+    const getFeedback = async () => {
+      feedbackServices.getFeedback_MangaId(id).then((res) => {
+        setFeedback(res.data);
+      });
+    };
+    countFeedback();
+    getFeedback();
   }, []);
-
-  //get genre
-  let listGenre,
-    listGenreId = [];
-  var check = ", ";
-  for (var i in manga.listGenre) {
-    if (i !== 0)
-      listGenre.push(
-        <a href="/genre">{check + manga.listGenre[i].genre.name}</a>
-      );
-    else listGenre.push(<a href="/genre">{manga.listGenre[i].genre.name}</a>);
-
-    listGenreId.push(manga.listGenre[i].genreId);
-  }
-
-  //get description
-
-  var des, readmore;
-  des = manga.description;
-  if (manga.description != null) {
-    if (manga.description.length > 200) {
-      des = manga.description.slice(0, 200);
-      readmore = manga.description.slice(200, manga.description.length);
-    }
-  }
-
-  //get chappter manga
-  let listChapter = [];
-  for (var i in manga.chapters) {
-    listChapter.push(<ListChappter props={manga.chapters[i]} />);
-  }
 
   //get feedback
   let listFeedback = [];

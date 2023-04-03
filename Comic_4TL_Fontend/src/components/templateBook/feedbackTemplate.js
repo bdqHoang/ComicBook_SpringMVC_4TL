@@ -1,8 +1,8 @@
 import React from "react";
 import moment from "moment";
 
-export default function FeedbackTemplate(props) {
-  console.log(props.props);
+function FeedbackTemplate(props) {
+  console.log(props);
   return (
     <li class="single_comment_area">
       <div class="comment-content d-flex">
@@ -21,10 +21,12 @@ export default function FeedbackTemplate(props) {
               "MM/DD/YYYY"
             ).format("DD/MM/YYYY")}
           </a>
-          <h5>Son Van Hieu</h5>
+          <h5>{props.props.users.name}</h5>
           <p>{props.props.comment}</p>
         </div>
       </div>
     </li>
   );
 }
+
+export default FeedbackTemplate;

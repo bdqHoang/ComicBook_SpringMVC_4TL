@@ -35,8 +35,12 @@ public class Chapters {
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "manga_id")
+<<<<<<< HEAD
     @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-    @JsonBackReference
+
+=======
+    @JsonIgnoreProperties({ "feedBacks", "chapters", "listGenre", "hibernateLazyInitializer", "handler" })
+>>>>>>> feature_hoang
     private Manga manga;
 
 }

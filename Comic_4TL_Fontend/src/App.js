@@ -1,21 +1,21 @@
-import React from 'react';
-import './App.css';
-import Header from './components/header/header';
-import Footer from './components/footer/footer';
-import Index from './page/Home';
-import Login from './page/User/Login';
-import Profile from './page/User/Profile';
+import React from "react";
+import "./App.css";
+import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
+import Index from "./page/Home";
+import Login from "./page/User/Login";
+import Profile from "./page/User/Profile";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignIn from './page/User/Register';
-import Genre from './page/Genre/Genre'
-import LastedManga from './components/homeComponent/lastedManga';
-import MangaSignlePage from './page/Manga/MangaSinglePage';
-import Chapter from './page/Manga/Chapter';
-
+import SignIn from "./page/User/Register";
+import Genre from "./page/Genre/Genre";
+import LastedManga from "./components/homeComponent/lastedManga";
+import MangaSignlePage from "./page/Manga/MangaSinglePage";
+import ChapterImage from "./components/mangaComponent/chapterImage";
+import Chapter from "./page/Manga/Chappter/Chappter";
 
 function App() {
   return (
-    <BrowserRouter> 
+    <BrowserRouter>
       <Routes>
         <Route>
           <Route
@@ -94,21 +94,46 @@ function App() {
             }
           /> */}
 
-          <Route path='/genre' element={<div className='App'>
+          <Route
+            path="/genre"
+            element={
+              <div className="App">
                 <Header></Header>
-                <Genre/>
+                <Genre />
                 <Footer></Footer>
-          </div>}/>
-          <Route path='/laster-manga' element={<div className='App'>
+              </div>
+            }
+          />
+          <Route
+            path="/laster-manga"
+            element={
+              <div className="App">
                 <Header></Header>
-                <LastedManga/>
+                <LastedManga />
                 <Footer></Footer>
-          </div>}/>
-          <Route path='/getmanga' element={<div className='App'>
+              </div>
+            }
+          />
+          <Route
+            path="/getmanga"
+            element={
+              <div className="App">
                 <Header></Header>
-                <MangaSignlePage/>
+                <MangaSignlePage />
                 <Footer></Footer>
-          </div>}/>
+              </div>
+            }
+          />
+          <Route
+            path="/getchapter"
+            element={
+              <div className="App">
+                <Header></Header>
+                <ChapterImage />
+                <Footer></Footer>
+              </div>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>
