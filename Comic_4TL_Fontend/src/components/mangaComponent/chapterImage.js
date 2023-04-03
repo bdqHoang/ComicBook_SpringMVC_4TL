@@ -4,6 +4,7 @@ import ChapterServices from "../../services/ChapterServices";
 import ChapterImangeServices from "../../services/ChapterImageServices";
 import ListChappter from "../templateBook/listChapterTemplate";
 import Imagetemplate from "../templateBook/imageTemplate";
+import ReactDOM from 'react-dom/client';
 
 export default function ChapterImage(props) {
   const { search } = useLocation();
@@ -33,6 +34,35 @@ export default function ChapterImage(props) {
   for (var b in chapter) {
     listChapter.push(<ListChappter props={chapter[b]} />);
   }
+
+
+  //select chappter
+  let [click, setClick] = useState(false);
+  var selectId;
+  const handleSelect = (e) =>{
+    setClick(!click);
+    selectId = e.target.value;
+  }
+
+  useEffect(() => {
+    ChapterImageServices.getChapterImageByChapterId(selectId).then((res) => {
+      setChapterImage(res.data);
+      listChapterImage = [];
+      for (var i in chapterImage) {
+        listChapterImage.push(<Imagetemplate props={chapterImage[i]} />);
+      }
+
+    });
+  }, [click]);
+
+  if(!click){
+    ReactDOM.createRoot(document.getElementById("imgChapter")).render(
+      <React.StrictMode>
+        <ChapterImage />
+      </React.StrictMode>,
+    )
+  }
+
   return (
     <>
       <div class="wrap">
@@ -89,11 +119,10 @@ export default function ChapterImage(props) {
           </div>
           <div class="row">
             <div class="col-lg-6 mb-30 mt-30">
-              <select
+              <select id="selectedChapter"
                 class="form-select form-select-sm"
                 aria-label=".form-select-sm example"
-                onchange="if (!window.__cfRLUnblockHandlers) return false; javascript:handleSelect(this)"
-                data-cf-modified-60063e96678437510989fb24-="" >
+                onChange={handleSelect}>
                 {listChapter}
               </select>
             </div>
