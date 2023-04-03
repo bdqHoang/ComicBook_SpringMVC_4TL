@@ -118,7 +118,7 @@ export default function ChapterImage(props) {
               </div>
             </div>
           </div>
-          <div class="row">{listChapterImage}</div>
+          <div class="row" id="imgChapter">{listChapterImage}</div>
         </div>
       </section>
     </>
