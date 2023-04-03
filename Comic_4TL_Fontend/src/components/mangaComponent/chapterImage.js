@@ -93,25 +93,15 @@ export default function ChapterImage(props) {
                 class="form-select form-select-sm"
                 aria-label=".form-select-sm example"
                 onchange="if (!window.__cfRLUnblockHandlers) return false; javascript:handleSelect(this)"
-                data-cf-modified-60063e96678437510989fb24-=""
-              >
+                data-cf-modified-60063e96678437510989fb24-="" >
                 {listChapter}
               </select>
-              {/* <script type="60063e96678437510989fb24-text/javascript">
-                        function handleSelect(elm) {
-                            window.location = elm.value + ".html";
-                        }
-                    </script> */}
             </div>
             <div class="col-lg-6 mb-30 mt-30">
               <div class="manga_info">
                 <ul>
-                  <li
-                    class="d-flex flex-wrap watch
-                                    justify-content-end"
-                  >
-                    <a href="../chapter/chapter01.html">
-                      Next <i class="fa-solid fa-arrow-right"></i>
+                  <li class="d-flex flex-wrap watch justify-content-end" >
+                    <a href="../chapter/chapter01.html"> Next <i class="fa-solid fa-arrow-right"></i>
                     </a>
                   </li>
                 </ul>

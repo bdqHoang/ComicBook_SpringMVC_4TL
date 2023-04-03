@@ -17,9 +17,8 @@ public class ImageChapterController {
     private ImageChapterServices imageChapterServices;
 
     // find image chapter by chapter id
-    @GetMapping(value = "/getimagechapter-chapterid")
-    public List<ImageChapter> getImageChapterByChapterId(int chapterId) {
-        return imageChapterServices.getImageByChapterID(chapterId);
+    @GetMapping(value = "/get-chapter")
+    public List<ImageChapter> getImageChapterByChapterId(int id) {
+        return imageChapterServices.getImageByChapterID(id);
     }
 }
-
