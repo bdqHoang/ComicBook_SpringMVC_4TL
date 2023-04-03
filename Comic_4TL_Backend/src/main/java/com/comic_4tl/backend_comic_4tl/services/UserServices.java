@@ -67,15 +67,14 @@ public class UserServices {
             return "Không tìm thấy tài khoản";
         }
         var password = alphaNumericString(8);
-        System.out.println(password);
         user.setPassword(encoder.encode(password));
         userRespository.save(user);
         Email sendEmail = new Email();
         sendEmail.setRecipient(email);
-        sendEmail.setMsgBody("Lấy lại mật khẩu");
-        sendEmail.setSubject("Mật khẩu mới của bạn là :" + password);
+        sendEmail.setSubject("Lấy lại mật khẩu");
+        sendEmail.setMsgBody("Mật khẩu mới của bạn là :" + password);
 
-        return emailServices.sendSimpleMail(sendEmail);
+        return emailServices.sendSimpleEmail(sendEmail);
     }
 
     public static String alphaNumericString(int len) {
