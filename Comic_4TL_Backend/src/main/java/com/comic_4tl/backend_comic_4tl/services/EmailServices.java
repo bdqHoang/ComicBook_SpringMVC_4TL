@@ -45,7 +45,7 @@ public class EmailServices implements EmailRespository {
 
         // Catch block to handle the exceptions
         catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
             return "Error while Sending Mail";
         }
     }
