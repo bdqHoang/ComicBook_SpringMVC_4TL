@@ -2,7 +2,6 @@ import React from "react";
 import moment from "moment";
 
 function FeedbackTemplate(props) {
-  console.log(props);
   return (
     <li class="single_comment_area">
       <div class="comment-content d-flex">

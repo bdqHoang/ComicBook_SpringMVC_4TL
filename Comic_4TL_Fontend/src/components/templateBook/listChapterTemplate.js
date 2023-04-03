@@ -3,8 +3,7 @@ import ReactDOM from "react-dom/client";
 import Imagetemplate from "../templateBook/imageTemplate";
 import ChapterImangeServices from "../../services/ChapterImageServices";
 
-
-export default function listChapterTemplate(props) {
+export default function ListChapterTemplate(props) {
   const [chapterImage, setChapterImage] = useState([]);
   const [clicked, setClicked] = useState(false);
 

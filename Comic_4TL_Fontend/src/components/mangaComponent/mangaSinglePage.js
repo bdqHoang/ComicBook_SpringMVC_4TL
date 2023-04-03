@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import MangaSinglePageServices from "../../services/mangaSinglePageServices";
+import MangaSinglePageServices from "../../services/MangaSinglePageServices";
 import ListChappter from "../../page/Manga/ListChapter";
 import FeedbackTemplate from "../../components/templateBook/feedbackTemplate";
 import FeedbackServices from "../../services/FeedbackServices";
