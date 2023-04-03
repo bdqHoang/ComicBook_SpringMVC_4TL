@@ -426,8 +426,7 @@ function Chapter() {
                   <div class="form-group">
                     <button
                       type="submit"
-                      class="button
-                                        button-contactForm btn_1 boxed-btn"
+                      class="button button-contactForm btn_1 boxed-btn"
                     >
                       Send Message
                     </button>

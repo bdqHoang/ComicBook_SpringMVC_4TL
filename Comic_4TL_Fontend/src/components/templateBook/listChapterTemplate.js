@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Imagetemplate from "../templateBook/imageTemplate";
 
@@ -17,8 +17,10 @@ export default function listChapterTemplate(props) {
   }
 
 
+
   const handleClick = () => {
-    ReactDOM.createRoot().render(
+    setClicked(true);
+    ReactDOM.createRoot(document.getElementById("")).render(
       <React.StrictMode>
 
       </React.StrictMode>
